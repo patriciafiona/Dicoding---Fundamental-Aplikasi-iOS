@@ -24,13 +24,10 @@
 
 /// Type that acts as a generic extension point for all `AlamofireExtended` types.
 public struct AlamofireExtension<ExtendedType> {
-    /// Stores the type or meta-type of any extended type.
-    public private(set) var type: ExtendedType
+    /// Stores the type or metatype of any extended type.
+    let type: ExtendedType
 
-    /// Create an instance from the provided value.
-    ///
-    /// - Parameter type: Instance being extended.
-    public init(_ type: ExtendedType) {
+    init(_ type: ExtendedType) {
         self.type = type
     }
 }
@@ -46,16 +43,16 @@ public protocol AlamofireExtended {
     var af: AlamofireExtension<ExtendedType> { get set }
 }
 
-extension AlamofireExtended {
+public extension AlamofireExtended {
     /// Static Alamofire extension point.
-    public static var af: AlamofireExtension<Self>.Type {
-        get { AlamofireExtension<Self>.self }
+    static var af: AlamofireExtension<Self>.Type {
+        get { return AlamofireExtension<Self>.self }
         set {}
     }
 
     /// Instance Alamofire extension point.
-    public var af: AlamofireExtension<Self> {
-        get { AlamofireExtension(self) }
+    var af: AlamofireExtension<Self> {
+        get { return AlamofireExtension(self) }
         set {}
     }
 }

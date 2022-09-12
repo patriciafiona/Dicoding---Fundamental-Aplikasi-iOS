@@ -1,7 +1,7 @@
 //
-//  Protected.swift
+//  Protector.swift
 //
-//  Copyright (c) 2014-2020 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,40 +24,10 @@
 
 import Foundation
 
-private protocol Lock {
-    func lock()
-    func unlock()
-}
+// MARK: -
 
-extension Lock {
-    /// Executes a closure returning a value while acquiring the lock.
-    ///
-    /// - Parameter closure: The closure to run.
-    ///
-    /// - Returns:           The value the closure generated.
-    func around<T>(_ closure: () throws -> T) rethrows -> T {
-        lock(); defer { unlock() }
-        return try closure()
-    }
-
-    /// Execute a closure while acquiring the lock.
-    ///
-    /// - Parameter closure: The closure to run.
-    func around(_ closure: () throws -> Void) rethrows {
-        lock(); defer { unlock() }
-        try closure()
-    }
-}
-
-#if os(Linux) || os(Windows)
-
-extension NSLock: Lock {}
-
-#endif
-
-#if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
 /// An `os_unfair_lock` wrapper.
-final class UnfairLock: Lock {
+final class UnfairLock {
     private let unfairLock: os_unfair_lock_t
 
     init() {
@@ -70,25 +40,36 @@ final class UnfairLock: Lock {
         unfairLock.deallocate()
     }
 
-    fileprivate func lock() {
+    private func lock() {
         os_unfair_lock_lock(unfairLock)
     }
 
-    fileprivate func unlock() {
+    private func unlock() {
         os_unfair_lock_unlock(unfairLock)
     }
+
+    /// Executes a closure returning a value while acquiring the lock.
+    ///
+    /// - Parameter closure: The closure to run.
+    ///
+    /// - Returns:           The value the closure generated.
+    func around<T>(_ closure: () -> T) -> T {
+        lock(); defer { unlock() }
+        return closure()
+    }
+
+    /// Execute a closure while acquiring the lock.
+    ///
+    /// - Parameter closure: The closure to run.
+    func around(_ closure: () -> Void) {
+        lock(); defer { unlock() }
+        return closure()
+    }
 }
-#endif
 
 /// A thread-safe wrapper around a value.
-@propertyWrapper
-@dynamicMemberLookup
-final class Protected<T> {
-    #if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
+final class Protector<T> {
     private let lock = UnfairLock()
-    #elseif os(Linux) || os(Windows)
-    private let lock = NSLock()
-    #endif
     private var value: T
 
     init(_ value: T) {
@@ -96,15 +77,9 @@ final class Protected<T> {
     }
 
     /// The contained value. Unsafe for anything more than direct read or write.
-    var wrappedValue: T {
-        get { lock.around { value } }
+    var directValue: T {
+        get { return lock.around { value } }
         set { lock.around { value = newValue } }
-    }
-
-    var projectedValue: Protected<T> { self }
-
-    init(wrappedValue: T) {
-        value = wrappedValue
     }
 
     /// Synchronously read or transform the contained value.
@@ -112,8 +87,8 @@ final class Protected<T> {
     /// - Parameter closure: The closure to execute.
     ///
     /// - Returns:           The return value of the closure passed.
-    func read<U>(_ closure: (T) throws -> U) rethrows -> U {
-        try lock.around { try closure(self.value) }
+    func read<U>(_ closure: (T) -> U) -> U {
+        return lock.around { closure(self.value) }
     }
 
     /// Synchronously modify the protected value.
@@ -122,28 +97,59 @@ final class Protected<T> {
     ///
     /// - Returns:           The modified value.
     @discardableResult
-    func write<U>(_ closure: (inout T) throws -> U) rethrows -> U {
-        try lock.around { try closure(&self.value) }
-    }
-
-    subscript<Property>(dynamicMember keyPath: WritableKeyPath<T, Property>) -> Property {
-        get { lock.around { value[keyPath: keyPath] } }
-        set { lock.around { value[keyPath: keyPath] = newValue } }
-    }
-
-    subscript<Property>(dynamicMember keyPath: KeyPath<T, Property>) -> Property {
-        lock.around { value[keyPath: keyPath] }
+    func write<U>(_ closure: (inout T) -> U) -> U {
+        return lock.around { closure(&self.value) }
     }
 }
 
-extension Protected where T == Request.MutableState {
+extension Protector where T: RangeReplaceableCollection {
+    /// Adds a new element to the end of this protected collection.
+    ///
+    /// - Parameter newElement: The `Element` to append.
+    func append(_ newElement: T.Element) {
+        write { (ward: inout T) in
+            ward.append(newElement)
+        }
+    }
+
+    /// Adds the elements of a sequence to the end of this protected collection.
+    ///
+    /// - Parameter newElements: The `Sequence` to append.
+    func append<S: Sequence>(contentsOf newElements: S) where S.Element == T.Element {
+        write { (ward: inout T) in
+            ward.append(contentsOf: newElements)
+        }
+    }
+
+    /// Add the elements of a collection to the end of the protected collection.
+    ///
+    /// - Parameter newElements: The `Collection` to append.
+    func append<C: Collection>(contentsOf newElements: C) where C.Element == T.Element {
+        write { (ward: inout T) in
+            ward.append(contentsOf: newElements)
+        }
+    }
+}
+
+extension Protector where T == Data? {
+    /// Adds the contents of a `Data` value to the end of the protected `Data`.
+    ///
+    /// - Parameter data: The `Data` to be appended.
+    func append(_ data: Data) {
+        write { (ward: inout T) in
+            ward?.append(data)
+        }
+    }
+}
+
+extension Protector where T == Request.MutableState {
     /// Attempts to transition to the passed `State`.
     ///
     /// - Parameter state: The `State` to attempt transition to.
     ///
-    /// - Returns:         Whether the transition occurred.
+    /// - Returns:         Whether the transtion occurred.
     func attemptToTransitionTo(_ state: Request.State) -> Bool {
-        lock.around {
+        return lock.around {
             guard value.state.canTransitionTo(state) else { return false }
 
             value.state = state

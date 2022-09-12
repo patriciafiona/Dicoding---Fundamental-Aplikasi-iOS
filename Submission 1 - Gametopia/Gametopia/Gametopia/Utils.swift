@@ -14,8 +14,8 @@ func imageCircle(imageView: UIImageView){
     imageView.layer.borderWidth = 0;
 }
 
-func viewRounded(view: AnyObject){
-    view.layer.cornerRadius = 30;
+func viewRounded(view: AnyObject, radius: Int){
+    view.layer.cornerRadius = CGFloat(radius);
     view.layer.masksToBounds = true;
     view.layer.borderWidth = 0;
 }

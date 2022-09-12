@@ -6,10 +6,11 @@ target 'Gametopia' do
   use_frameworks!
 
   # Pods for Gametopia
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'AlamofireObjectMapper'
 
   target 'GametopiaTests' do
-    pod 'Alamofire'
-
     inherit! :search_paths
     # Pods for testing
   end

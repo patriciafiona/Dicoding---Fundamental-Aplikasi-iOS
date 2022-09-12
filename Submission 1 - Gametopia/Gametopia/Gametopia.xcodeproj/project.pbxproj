@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5611012920CF1B659C6D1300 /* Pods_Gametopia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7EF513064E07C01D81A71C /* Pods_Gametopia.framework */; };
-		57B601E801E3A91BA59D9FEE /* Pods_GametopiaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AA70DEE609E28FB58ED92E /* Pods_GametopiaTests.framework */; };
-		E16B608B7E688836C95BBB5D /* Pods_Gametopia_GametopiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C600FD31E3FB81103E09694 /* Pods_Gametopia_GametopiaUITests.framework */; };
+		24B22CBF6F43317077D67EF2 /* Pods_Gametopia_GametopiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027A8842F79BC74DF33D29BA /* Pods_Gametopia_GametopiaUITests.framework */; };
+		782DA9090B7C488891DDADA2 /* Pods_Gametopia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4186E5322F19412DAC0BA4A /* Pods_Gametopia.framework */; };
+		F2A098B82766014D59CBABC5 /* Pods_GametopiaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE825C38066E7C1A42993E0D /* Pods_GametopiaTests.framework */; };
 		F73BAB3928CE3C0B00AEA70E /* DiscoveryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73BAB3828CE3C0B00AEA70E /* DiscoveryView.xib */; };
 		F73BAB3B28CE3C1600AEA70E /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BAB3A28CE3C1600AEA70E /* DiscoveryView.swift */; };
 		F749C0A528CE096800E7D3A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749C0A428CE096800E7D3A2 /* AppDelegate.swift */; };
@@ -23,10 +23,14 @@
 		F749C0C828CE096D00E7D3A2 /* GametopiaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749C0C728CE096D00E7D3A2 /* GametopiaUITestsLaunchTests.swift */; };
 		F749C0DF28CE16C600E7D3A2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749C0DE28CE16C600E7D3A2 /* HomeViewController.swift */; };
 		F749C0E128CE177300E7D3A2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749C0E028CE177300E7D3A2 /* Utils.swift */; };
-		F749C0E328CE19A700E7D3A2 /* VerminVibes.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F749C0E228CE19A700E7D3A2 /* VerminVibes.ttf */; };
-		F749C0E528CE1A0F00E7D3A2 /* EvilEmpire.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F749C0E428CE1A0F00E7D3A2 /* EvilEmpire.ttf */; };
 		F749C0F128CE253B00E7D3A2 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749C0F028CE253B00E7D3A2 /* Slide.swift */; };
 		F749C0F328CE256900E7D3A2 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = F749C0F228CE256900E7D3A2 /* Slide.xib */; };
+		F7CF243728CEDE0C00BECD89 /* EvilEmpire.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CF243628CEDE0C00BECD89 /* EvilEmpire.ttf */; };
+		F7CF243928CEDE1700BECD89 /* VerminVibes.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CF243828CEDE1700BECD89 /* VerminVibes.ttf */; };
+		F7CF244528CEDE7E00BECD89 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF244428CEDE7E00BECD89 /* NetworkService.swift */; };
+		F7CF245C28CEE19300BECD89 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F7CF245F28CEE37A00BECD89 /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF245E28CEE37A00BECD89 /* GameResponse.swift */; };
+		F7CF246128CF0CFA00BECD89 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF246028CF0CFA00BECD89 /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,16 +50,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F7CF245D28CEE19300BECD89 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F7CF245C28CEE19300BECD89 /* (null) in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		25C0F78E85326B8861DC106B /* Pods-Gametopia-GametopiaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gametopia-GametopiaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gametopia-GametopiaUITests/Pods-Gametopia-GametopiaUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		2C70FB273301F419C9D27A95 /* Pods-GametopiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GametopiaTests.release.xcconfig"; path = "Target Support Files/Pods-GametopiaTests/Pods-GametopiaTests.release.xcconfig"; sourceTree = "<group>"; };
-		3A093DD12E7392A473DB8E4C /* Pods-Gametopia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gametopia.debug.xcconfig"; path = "Target Support Files/Pods-Gametopia/Pods-Gametopia.debug.xcconfig"; sourceTree = "<group>"; };
-		3C600FD31E3FB81103E09694 /* Pods_Gametopia_GametopiaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gametopia_GametopiaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E0564ABE57C662162A3B3A6 /* Pods-Gametopia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gametopia.release.xcconfig"; path = "Target Support Files/Pods-Gametopia/Pods-Gametopia.release.xcconfig"; sourceTree = "<group>"; };
-		59AA70DEE609E28FB58ED92E /* Pods_GametopiaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GametopiaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A91D96F295C98A8491610C3 /* Pods-Gametopia-GametopiaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gametopia-GametopiaUITests.release.xcconfig"; path = "Target Support Files/Pods-Gametopia-GametopiaUITests/Pods-Gametopia-GametopiaUITests.release.xcconfig"; sourceTree = "<group>"; };
-		CB7EF513064E07C01D81A71C /* Pods_Gametopia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gametopia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9C0C6E78224F5B004C4222C /* Pods-GametopiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GametopiaTests.debug.xcconfig"; path = "Target Support Files/Pods-GametopiaTests/Pods-GametopiaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		027A8842F79BC74DF33D29BA /* Pods_Gametopia_GametopiaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gametopia_GametopiaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F545F08D37098C397E060E9 /* Pods-Gametopia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gametopia.debug.xcconfig"; path = "Target Support Files/Pods-Gametopia/Pods-Gametopia.debug.xcconfig"; sourceTree = "<group>"; };
+		27AFAE8411F4634B66D4C6E9 /* Pods-GametopiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GametopiaTests.debug.xcconfig"; path = "Target Support Files/Pods-GametopiaTests/Pods-GametopiaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		73556D79F0BBC9AF3EE57BED /* Pods-Gametopia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gametopia.release.xcconfig"; path = "Target Support Files/Pods-Gametopia/Pods-Gametopia.release.xcconfig"; sourceTree = "<group>"; };
+		A25C1D01D4B9CE7766C32B44 /* Pods-Gametopia-GametopiaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gametopia-GametopiaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gametopia-GametopiaUITests/Pods-Gametopia-GametopiaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BF253025F81EDD7EC14FBEDE /* Pods-Gametopia-GametopiaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gametopia-GametopiaUITests.release.xcconfig"; path = "Target Support Files/Pods-Gametopia-GametopiaUITests/Pods-Gametopia-GametopiaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C3B4160247498564E08CCD69 /* Pods-GametopiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GametopiaTests.release.xcconfig"; path = "Target Support Files/Pods-GametopiaTests/Pods-GametopiaTests.release.xcconfig"; sourceTree = "<group>"; };
+		DE825C38066E7C1A42993E0D /* Pods_GametopiaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GametopiaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4186E5322F19412DAC0BA4A /* Pods_Gametopia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gametopia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F73BAB3828CE3C0B00AEA70E /* DiscoveryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoveryView.xib; sourceTree = "<group>"; };
 		F73BAB3A28CE3C1600AEA70E /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
 		F749C0A128CE096800E7D3A2 /* Gametopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gametopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,10 +91,13 @@
 		F749C0C728CE096D00E7D3A2 /* GametopiaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GametopiaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F749C0DE28CE16C600E7D3A2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F749C0E028CE177300E7D3A2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		F749C0E228CE19A700E7D3A2 /* VerminVibes.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = VerminVibes.ttf; path = "../../../assets/fonts/vermin-vibes-v-font/VerminVibes.ttf"; sourceTree = "<group>"; };
-		F749C0E428CE1A0F00E7D3A2 /* EvilEmpire.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = EvilEmpire.ttf; path = "../../../assets/fonts/evil-empire-font/EvilEmpire.ttf"; sourceTree = "<group>"; };
 		F749C0F028CE253B00E7D3A2 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		F749C0F228CE256900E7D3A2 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		F7CF243628CEDE0C00BECD89 /* EvilEmpire.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = EvilEmpire.ttf; path = "../../../assets/fonts/evil-empire-font/EvilEmpire.ttf"; sourceTree = "<group>"; };
+		F7CF243828CEDE1700BECD89 /* VerminVibes.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = VerminVibes.ttf; path = "../../../assets/fonts/vermin-vibes-v-font/VerminVibes.ttf"; sourceTree = "<group>"; };
+		F7CF244428CEDE7E00BECD89 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		F7CF245E28CEE37A00BECD89 /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
+		F7CF246028CF0CFA00BECD89 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5611012920CF1B659C6D1300 /* Pods_Gametopia.framework in Frameworks */,
+				782DA9090B7C488891DDADA2 /* Pods_Gametopia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57B601E801E3A91BA59D9FEE /* Pods_GametopiaTests.framework in Frameworks */,
+				F2A098B82766014D59CBABC5 /* Pods_GametopiaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,34 +121,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E16B608B7E688836C95BBB5D /* Pods_Gametopia_GametopiaUITests.framework in Frameworks */,
+				24B22CBF6F43317077D67EF2 /* Pods_Gametopia_GametopiaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A9EF4B53078EC485E1ADB1F /* Pods */ = {
+		5C2BD36AEB6CEB473E6EBEA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3A093DD12E7392A473DB8E4C /* Pods-Gametopia.debug.xcconfig */,
-				3E0564ABE57C662162A3B3A6 /* Pods-Gametopia.release.xcconfig */,
-				25C0F78E85326B8861DC106B /* Pods-Gametopia-GametopiaUITests.debug.xcconfig */,
-				6A91D96F295C98A8491610C3 /* Pods-Gametopia-GametopiaUITests.release.xcconfig */,
-				E9C0C6E78224F5B004C4222C /* Pods-GametopiaTests.debug.xcconfig */,
-				2C70FB273301F419C9D27A95 /* Pods-GametopiaTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		2F0F30F0872042FD3FF714BC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CB7EF513064E07C01D81A71C /* Pods_Gametopia.framework */,
-				3C600FD31E3FB81103E09694 /* Pods_Gametopia_GametopiaUITests.framework */,
-				59AA70DEE609E28FB58ED92E /* Pods_GametopiaTests.framework */,
+				F4186E5322F19412DAC0BA4A /* Pods_Gametopia.framework */,
+				027A8842F79BC74DF33D29BA /* Pods_Gametopia_GametopiaUITests.framework */,
+				DE825C38066E7C1A42993E0D /* Pods_GametopiaTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E99AABC279BCB6622CD8DE4E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F545F08D37098C397E060E9 /* Pods-Gametopia.debug.xcconfig */,
+				73556D79F0BBC9AF3EE57BED /* Pods-Gametopia.release.xcconfig */,
+				A25C1D01D4B9CE7766C32B44 /* Pods-Gametopia-GametopiaUITests.debug.xcconfig */,
+				BF253025F81EDD7EC14FBEDE /* Pods-Gametopia-GametopiaUITests.release.xcconfig */,
+				27AFAE8411F4634B66D4C6E9 /* Pods-GametopiaTests.debug.xcconfig */,
+				C3B4160247498564E08CCD69 /* Pods-GametopiaTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		F73BAB3728CE3BF000AEA70E /* Home Banner */ = {
@@ -163,8 +184,8 @@
 				F749C0BA28CE096D00E7D3A2 /* GametopiaTests */,
 				F749C0C428CE096D00E7D3A2 /* GametopiaUITests */,
 				F749C0A228CE096800E7D3A2 /* Products */,
-				1A9EF4B53078EC485E1ADB1F /* Pods */,
-				2F0F30F0872042FD3FF714BC /* Frameworks */,
+				E99AABC279BCB6622CD8DE4E /* Pods */,
+				5C2BD36AEB6CEB473E6EBEA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,8 +202,8 @@
 		F749C0A328CE096800E7D3A2 /* Gametopia */ = {
 			isa = PBXGroup;
 			children = (
-				F749C0DB28CE143000E7D3A2 /* Fonts */,
-				F749C0D728CE099600E7D3A2 /* Data */,
+				F7CF243528CEDDFE00BECD89 /* Fonts */,
+				F7CF244228CEDE5000BECD89 /* Data */,
 				F749C0D628CE098900E7D3A2 /* FileSystem */,
 				F749C0D528CE097D00E7D3A2 /* View */,
 				F749C0D428CE097300E7D3A2 /* App */,
@@ -237,30 +258,6 @@
 			path = FileSystem;
 			sourceTree = "<group>";
 		};
-		F749C0D728CE099600E7D3A2 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				F749C0D828CE09A200E7D3A2 /* Remote */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		F749C0D828CE09A200E7D3A2 /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Remote;
-			sourceTree = "<group>";
-		};
-		F749C0DB28CE143000E7D3A2 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				F749C0E428CE1A0F00E7D3A2 /* EvilEmpire.ttf */,
-				F749C0E228CE19A700E7D3A2 /* VerminVibes.ttf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		F749C0F528CE293600E7D3A2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +268,33 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		F7CF243528CEDDFE00BECD89 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F7CF243828CEDE1700BECD89 /* VerminVibes.ttf */,
+				F7CF243628CEDE0C00BECD89 /* EvilEmpire.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F7CF244228CEDE5000BECD89 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F7CF244328CEDE5800BECD89 /* Remote */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F7CF244328CEDE5800BECD89 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				F7CF244428CEDE7E00BECD89 /* NetworkService.swift */,
+				F7CF245E28CEE37A00BECD89 /* GameResponse.swift */,
+				F7CF246028CF0CFA00BECD89 /* ImageDownloader.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -278,10 +302,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F749C0CB28CE096D00E7D3A2 /* Build configuration list for PBXNativeTarget "Gametopia" */;
 			buildPhases = (
-				FA32D4B093CE9D31278DC617 /* [CP] Check Pods Manifest.lock */,
+				142E8A60F0D19E3DC5C82599 /* [CP] Check Pods Manifest.lock */,
 				F749C09D28CE096800E7D3A2 /* Sources */,
 				F749C09E28CE096800E7D3A2 /* Frameworks */,
 				F749C09F28CE096800E7D3A2 /* Resources */,
+				F7CF245D28CEE19300BECD89 /* Embed Frameworks */,
+				2686CDE0F9AD6AB40470365C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -296,11 +322,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F749C0CE28CE096D00E7D3A2 /* Build configuration list for PBXNativeTarget "GametopiaTests" */;
 			buildPhases = (
-				62994FAC75306B29D7D89821 /* [CP] Check Pods Manifest.lock */,
+				E313CFB0A28615903B8A6AF5 /* [CP] Check Pods Manifest.lock */,
 				F749C0B328CE096D00E7D3A2 /* Sources */,
 				F749C0B428CE096D00E7D3A2 /* Frameworks */,
 				F749C0B528CE096D00E7D3A2 /* Resources */,
-				911650CF00C50A0194D56209 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -316,10 +341,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F749C0D128CE096D00E7D3A2 /* Build configuration list for PBXNativeTarget "GametopiaUITests" */;
 			buildPhases = (
-				C3F65D0ED2EE0B2090546D3F /* [CP] Check Pods Manifest.lock */,
+				4D24A7D8CC366D8188D17F40 /* [CP] Check Pods Manifest.lock */,
 				F749C0BD28CE096D00E7D3A2 /* Sources */,
 				F749C0BE28CE096D00E7D3A2 /* Frameworks */,
 				F749C0BF28CE096D00E7D3A2 /* Resources */,
+				39604ADDAFA1FBAC85AC4DCA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -381,10 +407,10 @@
 			files = (
 				F749C0B128CE096C00E7D3A2 /* LaunchScreen.storyboard in Resources */,
 				F749C0AE28CE096C00E7D3A2 /* assets.xcassets in Resources */,
-				F749C0E528CE1A0F00E7D3A2 /* EvilEmpire.ttf in Resources */,
-				F749C0E328CE19A700E7D3A2 /* VerminVibes.ttf in Resources */,
 				F749C0AC28CE096800E7D3A2 /* Main.storyboard in Resources */,
 				F749C0F328CE256900E7D3A2 /* Slide.xib in Resources */,
+				F7CF243928CEDE1700BECD89 /* VerminVibes.ttf in Resources */,
+				F7CF243728CEDE0C00BECD89 /* EvilEmpire.ttf in Resources */,
 				F73BAB3928CE3C0B00AEA70E /* DiscoveryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,68 +432,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		62994FAC75306B29D7D89821 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GametopiaTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		911650CF00C50A0194D56209 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GametopiaTests/Pods-GametopiaTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GametopiaTests/Pods-GametopiaTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GametopiaTests/Pods-GametopiaTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C3F65D0ED2EE0B2090546D3F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Gametopia-GametopiaUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FA32D4B093CE9D31278DC617 /* [CP] Check Pods Manifest.lock */ = {
+		142E8A60F0D19E3DC5C82599 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -489,6 +454,84 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2686CDE0F9AD6AB40470365C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gametopia/Pods-Gametopia-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gametopia/Pods-Gametopia-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gametopia/Pods-Gametopia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39604ADDAFA1FBAC85AC4DCA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gametopia-GametopiaUITests/Pods-Gametopia-GametopiaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gametopia-GametopiaUITests/Pods-Gametopia-GametopiaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gametopia-GametopiaUITests/Pods-Gametopia-GametopiaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D24A7D8CC366D8188D17F40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gametopia-GametopiaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E313CFB0A28615903B8A6AF5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GametopiaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -498,11 +541,14 @@
 			files = (
 				F749C0E128CE177300E7D3A2 /* Utils.swift in Sources */,
 				F749C0A928CE096800E7D3A2 /* SearchViewController.swift in Sources */,
+				F7CF244528CEDE7E00BECD89 /* NetworkService.swift in Sources */,
 				F73BAB3B28CE3C1600AEA70E /* DiscoveryView.swift in Sources */,
 				F749C0A528CE096800E7D3A2 /* AppDelegate.swift in Sources */,
 				F749C0F128CE253B00E7D3A2 /* Slide.swift in Sources */,
+				F7CF246128CF0CFA00BECD89 /* ImageDownloader.swift in Sources */,
 				F749C0A728CE096800E7D3A2 /* SceneDelegate.swift in Sources */,
 				F749C0DF28CE16C600E7D3A2 /* HomeViewController.swift in Sources */,
+				F7CF245F28CEE37A00BECD89 /* GameResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,7 +720,7 @@
 		};
 		F749C0CC28CE096D00E7D3A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A093DD12E7392A473DB8E4C /* Pods-Gametopia.debug.xcconfig */;
+			baseConfigurationReference = 1F545F08D37098C397E060E9 /* Pods-Gametopia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -703,7 +749,7 @@
 		};
 		F749C0CD28CE096D00E7D3A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E0564ABE57C662162A3B3A6 /* Pods-Gametopia.release.xcconfig */;
+			baseConfigurationReference = 73556D79F0BBC9AF3EE57BED /* Pods-Gametopia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -732,7 +778,7 @@
 		};
 		F749C0CF28CE096D00E7D3A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9C0C6E78224F5B004C4222C /* Pods-GametopiaTests.debug.xcconfig */;
+			baseConfigurationReference = 27AFAE8411F4634B66D4C6E9 /* Pods-GametopiaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -753,7 +799,7 @@
 		};
 		F749C0D028CE096D00E7D3A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C70FB273301F419C9D27A95 /* Pods-GametopiaTests.release.xcconfig */;
+			baseConfigurationReference = C3B4160247498564E08CCD69 /* Pods-GametopiaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -774,7 +820,7 @@
 		};
 		F749C0D228CE096D00E7D3A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25C0F78E85326B8861DC106B /* Pods-Gametopia-GametopiaUITests.debug.xcconfig */;
+			baseConfigurationReference = A25C1D01D4B9CE7766C32B44 /* Pods-Gametopia-GametopiaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -793,7 +839,7 @@
 		};
 		F749C0D328CE096D00E7D3A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A91D96F295C98A8491610C3 /* Pods-Gametopia-GametopiaUITests.release.xcconfig */;
+			baseConfigurationReference = BF253025F81EDD7EC14FBEDE /* Pods-Gametopia-GametopiaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

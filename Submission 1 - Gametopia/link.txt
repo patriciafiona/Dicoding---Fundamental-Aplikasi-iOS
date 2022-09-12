@@ -5,3 +5,10 @@ https://dribbble.com/shots/18974097-Online-Game-Store-Platform
 
 https://dribbble.com/shots/16752708-Game-Store-App
 https://dribbble.com/shots/14930319-Game-Store-App
+
+//Link slide show
+https://medium.com/@anitaa_1990/create-a-horizontal-paging-uiscrollview-with-uipagecontrol-swift-4-xcode-9-a3dddc845e92
+
+//Link scroll view
+https://fluffy.es/scrollview-storyboard-xcode-11/
+
