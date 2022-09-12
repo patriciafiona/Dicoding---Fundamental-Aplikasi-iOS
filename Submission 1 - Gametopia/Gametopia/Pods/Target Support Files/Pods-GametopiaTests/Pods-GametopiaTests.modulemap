@@ -1,0 +1,6 @@
+framework module Pods_GametopiaTests {
+  umbrella header "Pods-GametopiaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
