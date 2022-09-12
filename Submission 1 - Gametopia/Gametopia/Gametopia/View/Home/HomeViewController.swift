@@ -8,7 +8,8 @@
 import SwiftUI
 import Kingfisher
 
-class HomeViewController: UIViewController, UIScrollViewDelegate {
+class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource,
+                            UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var sliderScrollView: UIScrollView!
     @IBOutlet weak var sliderControll: UIPageControl!
@@ -19,9 +20,13 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var discoveryBtn: UIButton!
     @IBOutlet weak var discoveryContainer: UIStackView!
     
+    @IBOutlet weak var genreCollectionView: UICollectionView!
+    
     var slides:[Slide] = []
     var timer =  Timer()
     var counter = 0
+    
+    var genres:[GenreResult] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +56,15 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         
         timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(slide), userInfo: nil, repeats: true)
         
+        //set Genre Collection
+        genreCollectionView.dataSource = self
+        genreCollectionView.delegate = self
+        
+        genreCollectionView.register(UINib.init(nibName: "GenreCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GenreCollectionViewCell")
+        
         //load Data from API
         loadDiscoveryFromAPI()
+        loadGenreFromAPI()
     }
     
     private func loadDiscoveryFromAPI(){
@@ -100,6 +112,36 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                 }
             }
         }
+    }
+    
+    private func loadGenreFromAPI(){
+        let network = NetworkService()
+        network.getListGenres(){ [self] (result) in
+            let res = result
+            let listGenre = res?.results
+            
+            if(listGenre != nil){
+                genres = (res?.results!)!
+                self.genreCollectionView.reloadData()
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return genres.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GenreCollectionViewCell", for: indexPath) as! GenreCollectionViewCell
+        cell.configure(with: genres[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
+        let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
+        let size:CGFloat = (genreCollectionView.frame.size.width - space) / 2.0
+        return CGSize(width: size, height: size)
     }
     
     @objc func slide(){

@@ -31,6 +31,9 @@
 		F7CF245C28CEE19300BECD89 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F7CF245F28CEE37A00BECD89 /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF245E28CEE37A00BECD89 /* GameResponse.swift */; };
 		F7CF246428CF4B7A00BECD89 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF246328CF4B7A00BECD89 /* ProfileViewController.swift */; };
+		F7CF246728CF8A6F00BECD89 /* GenreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF246628CF8A6F00BECD89 /* GenreResponse.swift */; };
+		F7CF246D28CF8E2100BECD89 /* GenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF246B28CF8E2100BECD89 /* GenreCollectionViewCell.swift */; };
+		F7CF246E28CF8E2100BECD89 /* GenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CF246C28CF8E2100BECD89 /* GenreCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,9 @@
 		F7CF244428CEDE7E00BECD89 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F7CF245E28CEE37A00BECD89 /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
 		F7CF246328CF4B7A00BECD89 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F7CF246628CF8A6F00BECD89 /* GenreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreResponse.swift; sourceTree = "<group>"; };
+		F7CF246B28CF8E2100BECD89 /* GenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7CF246C28CF8E2100BECD89 /* GenreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +268,7 @@
 		F749C0F528CE293600E7D3A2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F7CF246828CF8DA200BECD89 /* Genre */,
 				F73BAB3C28CE3C2000AEA70E /* Discovery */,
 				F73BAB3728CE3BF000AEA70E /* Home Banner */,
 				F749C0DE28CE16C600E7D3A2 /* HomeViewController.swift */,
@@ -289,8 +296,8 @@
 		F7CF244328CEDE5800BECD89 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				F7CF246528CF8A5A00BECD89 /* Responses */,
 				F7CF244428CEDE7E00BECD89 /* NetworkService.swift */,
-				F7CF245E28CEE37A00BECD89 /* GameResponse.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -301,6 +308,24 @@
 				F7CF246328CF4B7A00BECD89 /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		F7CF246528CF8A5A00BECD89 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				F7CF245E28CEE37A00BECD89 /* GameResponse.swift */,
+				F7CF246628CF8A6F00BECD89 /* GenreResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		F7CF246828CF8DA200BECD89 /* Genre */ = {
+			isa = PBXGroup;
+			children = (
+				F7CF246B28CF8E2100BECD89 /* GenreCollectionViewCell.swift */,
+				F7CF246C28CF8E2100BECD89 /* GenreCollectionViewCell.xib */,
+			);
+			path = Genre;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +442,7 @@
 				F749C0AE28CE096C00E7D3A2 /* assets.xcassets in Resources */,
 				F749C0AC28CE096800E7D3A2 /* Main.storyboard in Resources */,
 				F749C0F328CE256900E7D3A2 /* Slide.xib in Resources */,
+				F7CF246E28CF8E2100BECD89 /* GenreCollectionViewCell.xib in Resources */,
 				F7CF243928CEDE1700BECD89 /* VerminVibes.ttf in Resources */,
 				F7CF243728CEDE0C00BECD89 /* EvilEmpire.ttf in Resources */,
 				F73BAB3928CE3C0B00AEA70E /* DiscoveryView.xib in Resources */,
@@ -551,12 +577,14 @@
 				F749C0A928CE096800E7D3A2 /* SearchViewController.swift in Sources */,
 				F7CF246428CF4B7A00BECD89 /* ProfileViewController.swift in Sources */,
 				F7CF244528CEDE7E00BECD89 /* NetworkService.swift in Sources */,
+				F7CF246D28CF8E2100BECD89 /* GenreCollectionViewCell.swift in Sources */,
 				F73BAB3B28CE3C1600AEA70E /* DiscoveryView.swift in Sources */,
 				F749C0A528CE096800E7D3A2 /* AppDelegate.swift in Sources */,
 				F749C0F128CE253B00E7D3A2 /* Slide.swift in Sources */,
 				F749C0A728CE096800E7D3A2 /* SceneDelegate.swift in Sources */,
 				F749C0DF28CE16C600E7D3A2 /* HomeViewController.swift in Sources */,
 				F7CF245F28CEE37A00BECD89 /* GameResponse.swift in Sources */,
+				F7CF246728CF8A6F00BECD89 /* GenreResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

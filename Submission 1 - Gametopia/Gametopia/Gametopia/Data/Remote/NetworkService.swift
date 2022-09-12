@@ -36,6 +36,27 @@ class NetworkService {
             }
         }
     }
+    
+    func getListGenres(completionHandler: @escaping (GenreResponse?) -> ()) {
+        AF.request(
+            "https://api.rawg.io/api/genres",
+            method: .get,
+            parameters: ["key": apiKey],
+            encoder: URLEncodedFormParameterEncoder.default
+        ).response { resp in
+            switch resp.result {
+                case .success(_):
+                    // Convert JSON String to Model
+                    if let data = resp.data {
+                        let jsonString = String(data: data, encoding: .utf8)
+                        let listGenre = Mapper<GenreResponse>().map(JSONObject: jsonString?.toJSON())
+                        completionHandler(listGenre)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+    }
 }
 
 extension String {
