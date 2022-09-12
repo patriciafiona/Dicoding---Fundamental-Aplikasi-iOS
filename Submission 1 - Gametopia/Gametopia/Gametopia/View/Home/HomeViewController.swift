@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 class HomeViewController: UIViewController, UIScrollViewDelegate {
 
@@ -64,7 +65,28 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                 for i in 0 ..< listDiscovery!.count {
                     //create viewItem
                     let viewItem:DiscoveryView = Bundle.main.loadNibNamed("DiscoveryView", owner: self, options: nil)?.first as! DiscoveryView
-                    viewItem.title.text = res?.results?[i].name
+                    let data = res?.results?[i]
+                    viewItem.title.text = data?.name
+                    viewItem.rating.text = "\(data?.rating ?? 0.0)"
+                    
+                    if(data?.released != nil){
+                        viewItem.releaseDate.text = "Released on \(dateFormat(dateTxt: (data?.released!)!))"
+                    }else{
+                        viewItem.releaseDate.text = "Unknown Release"
+                    }
+                    
+                    if let backgroundImage = data?.backgroundImage{
+                        let url = URL(string: (backgroundImage))
+                        viewItem.posterImage.kf.setImage(
+                            with: url,
+                            placeholder: UIImage(named: "placeholder_image"),
+                            options: [
+                                .scaleFactor(UIScreen.main.scale),
+                                .transition(.fade(1)),
+                                .cacheOriginalImage
+                            ]
+                        )
+                    }
     
                     viewItem.frame = CGRect(
                         x: view.frame.width * CGFloat(i),

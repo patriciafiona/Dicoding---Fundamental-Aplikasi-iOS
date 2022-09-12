@@ -10,4 +10,6 @@ import UIKit
 class DiscoveryView: UIView {
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var releaseDate: UILabel!
+    @IBOutlet weak var rating: UILabel!
 }

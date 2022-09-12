@@ -19,3 +19,12 @@ func viewRounded(view: AnyObject, radius: Int){
     view.layer.masksToBounds = true;
     view.layer.borderWidth = 0;
 }
+
+func dateFormat(dateTxt: String)-> String{
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    let date = dateFormatter.date(from: dateTxt)!
+    
+    dateFormatter.dateFormat = "MMM d, yyyy"
+    return dateFormatter.string(from: date)
+}

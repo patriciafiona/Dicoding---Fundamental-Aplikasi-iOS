@@ -30,7 +30,7 @@
 		F7CF244528CEDE7E00BECD89 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF244428CEDE7E00BECD89 /* NetworkService.swift */; };
 		F7CF245C28CEE19300BECD89 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F7CF245F28CEE37A00BECD89 /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF245E28CEE37A00BECD89 /* GameResponse.swift */; };
-		F7CF246128CF0CFA00BECD89 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF246028CF0CFA00BECD89 /* ImageDownloader.swift */; };
+		F7CF246428CF4B7A00BECD89 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF246328CF4B7A00BECD89 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,7 +97,7 @@
 		F7CF243828CEDE1700BECD89 /* VerminVibes.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = VerminVibes.ttf; path = "../../../assets/fonts/vermin-vibes-v-font/VerminVibes.ttf"; sourceTree = "<group>"; };
 		F7CF244428CEDE7E00BECD89 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F7CF245E28CEE37A00BECD89 /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
-		F7CF246028CF0CFA00BECD89 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		F7CF246328CF4B7A00BECD89 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +241,7 @@
 		F749C0D528CE097D00E7D3A2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F7CF246228CF4B6300BECD89 /* Profile */,
 				F749C0F528CE293600E7D3A2 /* Home */,
 				F73BAB3D28CE419900AEA70E /* Search */,
 				F749C0AA28CE096800E7D3A2 /* Main.storyboard */,
@@ -290,9 +291,16 @@
 			children = (
 				F7CF244428CEDE7E00BECD89 /* NetworkService.swift */,
 				F7CF245E28CEE37A00BECD89 /* GameResponse.swift */,
-				F7CF246028CF0CFA00BECD89 /* ImageDownloader.swift */,
 			);
 			path = Remote;
+			sourceTree = "<group>";
+		};
+		F7CF246228CF4B6300BECD89 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F7CF246328CF4B7A00BECD89 /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,11 +549,11 @@
 			files = (
 				F749C0E128CE177300E7D3A2 /* Utils.swift in Sources */,
 				F749C0A928CE096800E7D3A2 /* SearchViewController.swift in Sources */,
+				F7CF246428CF4B7A00BECD89 /* ProfileViewController.swift in Sources */,
 				F7CF244528CEDE7E00BECD89 /* NetworkService.swift in Sources */,
 				F73BAB3B28CE3C1600AEA70E /* DiscoveryView.swift in Sources */,
 				F749C0A528CE096800E7D3A2 /* AppDelegate.swift in Sources */,
 				F749C0F128CE253B00E7D3A2 /* Slide.swift in Sources */,
-				F7CF246128CF0CFA00BECD89 /* ImageDownloader.swift in Sources */,
 				F749C0A728CE096800E7D3A2 /* SceneDelegate.swift in Sources */,
 				F749C0DF28CE16C600E7D3A2 /* HomeViewController.swift in Sources */,
 				F7CF245F28CEE37A00BECD89 /* GameResponse.swift in Sources */,

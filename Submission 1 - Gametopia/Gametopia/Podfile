@@ -9,6 +9,7 @@ target 'Gametopia' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'AlamofireObjectMapper'
+  pod 'Kingfisher', '~> 7.0'
 
   target 'GametopiaTests' do
     inherit! :search_paths

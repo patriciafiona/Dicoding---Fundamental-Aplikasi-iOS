@@ -29,7 +29,7 @@ class Result: Mappable {
     var id: Int?
     var name, released: String?
     var backgroundImage: String?
-    var rating, ratingTop: Int?
+    var rating, ratingTop: Double?
     var suggestionsCount: Int?
     var updated: Date?
     var reviewsCount: Int?

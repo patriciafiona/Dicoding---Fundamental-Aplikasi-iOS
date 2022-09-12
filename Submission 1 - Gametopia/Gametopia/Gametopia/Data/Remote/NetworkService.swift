@@ -13,14 +13,14 @@ class NetworkService {
     
     // MARK: Gunakan API Key dalam akun Anda.
     let apiKey = "e99fe74e633e4257a3498d8af7d27560"
-    let orderByReleased = "released"
+    let orderByRatingDesc = "-rating"
     let page = "1"
     
     func getDiscoveryGame(completionHandler: @escaping (GameResponse?) -> ()) {
         AF.request(
             "https://api.rawg.io/api/games",
             method: .get,
-            parameters: ["key": apiKey, "ordering": orderByReleased, "page_size": "5"],
+            parameters: ["key": apiKey, "ordering": orderByRatingDesc, "page_size": "10"],
             encoder: URLEncodedFormParameterEncoder.default
         ).response { resp in
             switch resp.result {
