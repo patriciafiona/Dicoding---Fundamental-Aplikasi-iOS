@@ -12,3 +12,7 @@ https://medium.com/@anitaa_1990/create-a-horizontal-paging-uiscrollview-with-uip
 //Link scroll view
 https://fluffy.es/scrollview-storyboard-xcode-11/
 
+//skeleton Link
+https://cocoapods.org/pods/SkeletonView#-guides
+https://medium.com/@osamaazmat/skeletonview-animation-in-swift-uitableview-d5508f2a736c
+

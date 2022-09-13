@@ -57,6 +57,27 @@ class NetworkService {
             }
         }
     }
+    
+    func getListDevelopers(completionHandler: @escaping (DeveloperResponse?) -> ()) {
+        AF.request(
+            "https://api.rawg.io/api/developers",
+            method: .get,
+            parameters: ["key": apiKey],
+            encoder: URLEncodedFormParameterEncoder.default
+        ).response { resp in
+            switch resp.result {
+                case .success(_):
+                    // Convert JSON String to Model
+                    if let data = resp.data {
+                        let jsonString = String(data: data, encoding: .utf8)
+                        let listDeveloper = Mapper<DeveloperResponse>().map(JSONObject: jsonString?.toJSON())
+                        completionHandler(listDeveloper)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+    }
 }
 
 extension String {

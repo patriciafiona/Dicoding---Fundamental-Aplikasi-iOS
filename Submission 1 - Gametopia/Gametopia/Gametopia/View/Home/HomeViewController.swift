@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Kingfisher
+import SkeletonView
 
 class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource,
                             UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -22,16 +23,27 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
     
     @IBOutlet weak var genreCollectionView: UICollectionView!
     
+    @IBOutlet weak var developerTableView: UITableView!
+    
     var slides:[Slide] = []
     var timer =  Timer()
     var counter = 0
     
     var genres:[GenreResult] = []
+    var developers:[DeveloperResult] = []
+    
+    var totalDeveloperSkeleton = 10
+    var totalGenreSkeleton = 20
+    var totalDiscoverySkeleton = 10
+    var shouldAnimateDeveloper = true
+    var shouldAnimateGenre = true
+    var shouldAnimateDiscovery = true
+    
+    let gradient = SkeletonGradient(baseColor: UIColor.darkClouds)
+    let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftRight)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        sliderScrollView.delegate = self
         initView()
     }
     
@@ -43,18 +55,33 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
         setupSlideScrollView(slides: slides)
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        setHomeBanner(){ [self] (result) in
+            sliderScrollView.isHidden = result
+            sliderControll.isHidden = result
+        }
+    }
+    
     private func initView(){
         imageCircle(imageView: userProfilePicture)
         
+        sliderScrollView.delegate = self
+        
+        //create empty view in discovery for skeleton
+        for _ in 0...totalDiscoverySkeleton{
+            let viewItem:DiscoveryView = Bundle.main.loadNibNamed("DiscoveryView", owner: self, options: nil)?.first as! DiscoveryView
+            
+            viewItem.container.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
+            
+            self.discoveryContainer.addArrangedSubview(viewItem)
+        }
+        
         //home banner
-        slides = createSlides()
-        setupSlideScrollView(slides: slides)
-        
-        sliderControll.numberOfPages = slides.count
-        sliderControll.currentPage = 0
-        view.bringSubviewToFront(sliderControll)
-        
-        timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(slide), userInfo: nil, repeats: true)
+        setHomeBanner(){ [self] (result) in
+            sliderScrollView.isHidden = result
+            sliderControll.isHidden = result
+        }
         
         //set Genre Collection
         genreCollectionView.dataSource = self
@@ -62,9 +89,45 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
         
         genreCollectionView.register(UINib.init(nibName: "GenreCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GenreCollectionViewCell")
         
+        //set developer table view
+        developerTableView.dataSource = self
+        developerTableView.register(
+          UINib(nibName: "DeveloperTableViewCell", bundle: nil),
+          forCellReuseIdentifier: "developerTableViewCell"
+        )
+        
         //load Data from API
         loadDiscoveryFromAPI()
         loadGenreFromAPI()
+        loadDeveloperFromAPI()
+    }
+    
+    private func setHomeBanner(completion: @escaping (Bool) -> Void){
+        let queue = DispatchQueue(label: "com.patriciafiona.gametopia")
+        queue.sync {
+            sliderScrollView.isHidden = true
+            sliderControll.isHidden = true
+            
+            sliderScrollView.subviews.forEach({ $0.removeFromSuperview() })
+            
+            slides = createSlides()
+            setupSlideScrollView(slides: slides)
+            
+            resetSliderTimer()
+            
+            sliderControll.numberOfPages = slides.count
+            sliderControll.currentPage = 0
+            counter = 0 //for timer
+            view.bringSubviewToFront(sliderControll)
+            
+            completion(false)
+        }
+        
+    }
+    
+    private func resetSliderTimer(){
+        timer.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(slide), userInfo: nil, repeats: true)
     }
     
     private func loadDiscoveryFromAPI(){
@@ -74,6 +137,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
             let listDiscovery = res?.results
             
             if(listDiscovery != nil){
+                discoveryContainer.subviews.forEach({ $0.removeFromSuperview() })
+                
                 for i in 0 ..< listDiscovery!.count {
                     //create viewItem
                     let viewItem:DiscoveryView = Bundle.main.loadNibNamed("DiscoveryView", owner: self, options: nil)?.first as! DiscoveryView
@@ -122,18 +187,58 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
             
             if(listGenre != nil){
                 genres = (res?.results!)!
+                totalGenreSkeleton = genres.count
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.shouldAnimateGenre=false
+                    self.genreCollectionView.reloadData()
+                }
+            }else{
                 self.genreCollectionView.reloadData()
             }
         }
     }
     
+    private func loadDeveloperFromAPI(){
+        let network = NetworkService()
+        network.getListDevelopers(){ [self] (result) in
+            let res = result
+            let listDeveloper = res?.results
+            
+            if(listDeveloper != nil){
+                developers = (res?.results!)!
+                totalDeveloperSkeleton = developers.count
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.shouldAnimateDeveloper=false
+                    self.developerTableView.reloadData()
+                }
+            }else{
+                self.developerTableView.reloadData()
+            }
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return genres.count
+        return totalGenreSkeleton
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GenreCollectionViewCell", for: indexPath) as! GenreCollectionViewCell
-        cell.configure(with: genres[indexPath.row])
+        if genres.count > 0 {
+            cell.configure(with: genres[indexPath.row])
+        }
+        
+        if shouldAnimateGenre{
+            cell.darkTransparent.isHidden = true
+            cell.imageViewSkeletonTemp.isHidden = false
+            cell.cellContainer.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
+        }else{
+            cell.darkTransparent.isHidden = false
+            cell.imageViewSkeletonTemp.isHidden = true
+            cell.cellContainer.hideSkeleton()
+        }
+        
         return cell
     }
     
@@ -141,7 +246,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
         let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
         let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
         let size:CGFloat = (genreCollectionView.frame.size.width - space) / 2.0
-        return CGSize(width: size, height: size)
+        
+        return CGSize(width: size, height: 200)
     }
     
     @objc func slide(){
@@ -150,7 +256,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
             sliderControll.currentPage = 0
             counter += 1
         }else if counter <  slides.count{
-            sliderScrollView.contentOffset = CGPoint(x:sliderScrollView.contentOffset.x + sliderScrollView.frame.width, y:0)
+            sliderScrollView.contentOffset = CGPoint(x:sliderScrollView.contentOffset.x + view.frame.width, y:0)
             sliderControll.currentPage = Int(counter)
             counter += 1
         }else{
@@ -210,5 +316,73 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
         sliderControll.currentPage = Int(pageIndex)
     }
+}
 
+extension HomeViewController: UITableViewDataSource {
+
+  func tableView(
+    _ tableView: UITableView,
+    numberOfRowsInSection section: Int
+  ) -> Int {
+    return totalDeveloperSkeleton
+  }
+
+  func tableView(
+    _ tableView: UITableView,
+    cellForRowAt indexPath: IndexPath
+  ) -> UITableViewCell {
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: "developerTableViewCell", for: indexPath) as? DeveloperTableViewCell else{
+        return UITableViewCell()
+      }
+          
+      cell.backgroundColor = cell.contentView.backgroundColor
+      
+      if (developers.count > 0){
+          let dev = developers[indexPath.row]
+          
+          cell.name.text = dev.name
+          textShadow(label: cell.name)
+        
+          if let backgroundImage = dev.imageBackground{
+              let url = URL(string: (backgroundImage))
+              cell.imageBackground.kf.setImage(
+                  with: url,
+                  placeholder: UIImage(named: "placeholder_image"),
+                  options: [
+                      .scaleFactor(UIScreen.main.scale),
+                      .transition(.fade(1)),
+                      .cacheOriginalImage
+                  ]
+              )
+          }
+          
+          let listItemGame = [cell.gameItemBtn01, cell.gameItemBtn02, cell.gameItemBtn03]
+          let listAddedText = [cell.gameItemAdded01, cell.gameItemAdded02, cell.gameItemAdded03]
+          
+          for i in 0 ..< listItemGame.count{
+              listItemGame[i]!.contentHorizontalAlignment = .left
+              listItemGame[i]!.setTitle(dev.games?[i].name, for: .normal)
+              
+              listAddedText[i]!.text = "\(dev.games?[i].added ?? 0)"
+          }
+      }
+      
+      if shouldAnimateDeveloper{
+          cell.darkTransparent.isHidden = true
+          cell.name.layer.shadowOpacity = 0
+          cell.container.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
+      }else{
+          cell.darkTransparent.isHidden = false
+          cell.name.layer.shadowOpacity = 1
+          cell.container.hideSkeleton()
+      }
+      
+      return cell
+  }
+}
+
+extension HomeViewController: SkeletonTableViewDataSource{
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return "developerTableViewCell"
+    }
 }

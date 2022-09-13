@@ -9,6 +9,9 @@ import UIKit
 
 class GenreCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var imageViewSkeletonTemp: UIImageView!
+    @IBOutlet weak var darkTransparent: UIImageView!
+    @IBOutlet weak var cellContainer: UIView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var totalGames: UILabel!
     @IBOutlet weak var imageBackground: UIImageView!
