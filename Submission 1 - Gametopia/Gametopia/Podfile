@@ -11,6 +11,7 @@ target 'Gametopia' do
   pod 'AlamofireObjectMapper'
   pod 'Kingfisher', '~> 7.0'
   pod 'SkeletonView'
+  pod 'SwiftyGif'
 
   target 'GametopiaTests' do
     inherit! :search_paths

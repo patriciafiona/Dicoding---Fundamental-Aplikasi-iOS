@@ -291,14 +291,133 @@
                     <view key="view" contentMode="scaleToFill" id="ffS-gn-uXE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eAY-A0-wut">
+                                <rect key="frame" x="20" y="44" width="374" height="769"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="6rM-NA-5gZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="51"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="alphabet" keyboardAppearance="alert"/>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchResultCell" rowHeight="90" id="AfG-go-bG4" customClass="SearchTableViewCell" customModule="Gametopia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="95.5" width="374" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AfG-go-bG4" id="wwS-2x-NG8">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_image" translatesAutoresizingMaskIntoConstraints="NO" id="DkD-6V-zZ9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="IZQ-ns-9zM"/>
+                                                        <constraint firstAttribute="width" constant="90" id="q92-Td-xa0"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DF-3I-8hH">
+                                                    <rect key="frame" x="98" y="11" width="256" height="21"/>
+                                                    <fontDescription key="fontDescription" name="EvilEmpire" family="Evil Empire" pointSize="20"/>
+                                                    <color key="textColor" systemColor="systemYellowColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vra-ud-ewe">
+                                                    <rect key="frame" x="98" y="32" width="256" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="x2j-UB-7x3">
+                                                    <rect key="frame" x="98" y="54" width="15" height="15"/>
+                                                    <color key="tintColor" systemColor="systemYellowColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="15" id="LPl-KA-ONG"/>
+                                                        <constraint firstAttribute="height" constant="15" id="kci-lz-4sA"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twW-dZ-VfV">
+                                                    <rect key="frame" x="116" y="54.5" width="16.5" height="15"/>
+                                                    <fontDescription key="fontDescription" name="EvilEmpire" family="Evil Empire" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="| Score: 9000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14P-3v-mX8">
+                                                    <rect key="frame" x="140.5" y="54.5" width="227.5" height="15"/>
+                                                    <fontDescription key="fontDescription" name="EvilEmpire" family="Evil Empire" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vra-ud-ewe" firstAttribute="top" secondItem="7DF-3I-8hH" secondAttribute="bottom" id="0NN-cS-DoV"/>
+                                                <constraint firstItem="x2j-UB-7x3" firstAttribute="leading" secondItem="vra-ud-ewe" secondAttribute="leading" id="0Ok-Hq-vXx"/>
+                                                <constraint firstItem="vra-ud-ewe" firstAttribute="trailing" secondItem="wwS-2x-NG8" secondAttribute="trailingMargin" id="2aV-wQ-oIX"/>
+                                                <constraint firstItem="14P-3v-mX8" firstAttribute="top" secondItem="twW-dZ-VfV" secondAttribute="top" id="3lY-Iz-hod"/>
+                                                <constraint firstItem="DkD-6V-zZ9" firstAttribute="leading" secondItem="wwS-2x-NG8" secondAttribute="leading" id="4D9-pv-0uc"/>
+                                                <constraint firstItem="14P-3v-mX8" firstAttribute="baseline" secondItem="x2j-UB-7x3" secondAttribute="baseline" id="B3U-OR-5cm"/>
+                                                <constraint firstItem="7DF-3I-8hH" firstAttribute="width" secondItem="wwS-2x-NG8" secondAttribute="width" multiplier="0.684492" id="JLA-xS-d9j"/>
+                                                <constraint firstAttribute="trailing" secondItem="14P-3v-mX8" secondAttribute="trailing" constant="6" id="MWg-Gv-zAW"/>
+                                                <constraint firstAttribute="bottom" secondItem="DkD-6V-zZ9" secondAttribute="bottom" id="Mld-s8-gmn"/>
+                                                <constraint firstItem="vra-ud-ewe" firstAttribute="leading" secondItem="DkD-6V-zZ9" secondAttribute="trailing" constant="8" symbolic="YES" id="OfD-NJ-C9d"/>
+                                                <constraint firstItem="14P-3v-mX8" firstAttribute="leading" secondItem="twW-dZ-VfV" secondAttribute="trailing" constant="8" symbolic="YES" id="PrT-cm-PiZ"/>
+                                                <constraint firstItem="7DF-3I-8hH" firstAttribute="trailing" secondItem="wwS-2x-NG8" secondAttribute="trailingMargin" id="QJO-Au-XPE"/>
+                                                <constraint firstItem="twW-dZ-VfV" firstAttribute="bottom" secondItem="x2j-UB-7x3" secondAttribute="bottom" id="TE0-mR-9RM"/>
+                                                <constraint firstItem="7DF-3I-8hH" firstAttribute="leading" secondItem="DkD-6V-zZ9" secondAttribute="trailing" constant="8" symbolic="YES" id="V3P-ms-IaH"/>
+                                                <constraint firstItem="twW-dZ-VfV" firstAttribute="leading" secondItem="x2j-UB-7x3" secondAttribute="trailing" constant="3" id="dWe-7b-PpZ"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="twW-dZ-VfV" secondAttribute="trailing" constant="20" symbolic="YES" id="jUC-oS-ldZ"/>
+                                                <constraint firstItem="DkD-6V-zZ9" firstAttribute="top" secondItem="wwS-2x-NG8" secondAttribute="top" id="kXe-jg-IlO"/>
+                                                <constraint firstItem="vra-ud-ewe" firstAttribute="width" secondItem="wwS-2x-NG8" secondAttribute="width" multiplier="0.684492" id="meK-FN-4sG"/>
+                                                <constraint firstItem="7DF-3I-8hH" firstAttribute="top" secondItem="wwS-2x-NG8" secondAttribute="topMargin" id="rtN-Ti-wa5"/>
+                                                <constraint firstItem="x2j-UB-7x3" firstAttribute="top" secondItem="vra-ud-ewe" secondAttribute="bottom" constant="8" id="vjG-hG-Gl9"/>
+                                                <constraint firstItem="14P-3v-mX8" firstAttribute="centerY" secondItem="x2j-UB-7x3" secondAttribute="centerY" id="ynl-qt-l1K"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.076232280929999993" green="0.076232280929999993" blue="0.076232280929999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="gameDescription" destination="vra-ud-ewe" id="XEr-2F-zsW"/>
+                                            <outlet property="gameImage" destination="DkD-6V-zZ9" id="ADv-g8-Gyf"/>
+                                            <outlet property="name" destination="7DF-3I-8hH" id="kbk-6W-Wmx"/>
+                                            <outlet property="rating" destination="twW-dZ-VfV" id="5yY-4c-8ri"/>
+                                            <outlet property="score" destination="14P-3v-mX8" id="cBQ-sp-q5R"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oDD-jo-4RC">
+                                <rect key="frame" x="125" y="341.5" width="164" height="174"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jXJ-z8-jr1"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oDD-jo-4RC" firstAttribute="centerX" secondItem="jXJ-z8-jr1" secondAttribute="centerX" id="DId-MC-ZAy"/>
+                            <constraint firstItem="oDD-jo-4RC" firstAttribute="height" secondItem="jXJ-z8-jr1" secondAttribute="height" multiplier="0.226268" id="QYM-Vz-VRo"/>
+                            <constraint firstItem="eAY-A0-wut" firstAttribute="width" secondItem="jXJ-z8-jr1" secondAttribute="width" multiplier="0.903382" id="h1l-1C-bEC"/>
+                            <constraint firstItem="oDD-jo-4RC" firstAttribute="centerY" secondItem="jXJ-z8-jr1" secondAttribute="centerY" id="kat-M9-6h0"/>
+                            <constraint firstItem="eAY-A0-wut" firstAttribute="centerY" secondItem="jXJ-z8-jr1" secondAttribute="centerY" id="l55-3E-eLk"/>
+                            <constraint firstItem="eAY-A0-wut" firstAttribute="centerX" secondItem="jXJ-z8-jr1" secondAttribute="centerX" id="nXc-qG-lRi"/>
+                            <constraint firstItem="oDD-jo-4RC" firstAttribute="width" secondItem="jXJ-z8-jr1" secondAttribute="width" multiplier="0.396135" id="qPA-Ri-yp0"/>
+                            <constraint firstItem="eAY-A0-wut" firstAttribute="top" secondItem="jXJ-z8-jr1" secondAttribute="top" id="t4L-zg-fG8"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="Y7C-5v-Gnm"/>
+                    <connections>
+                        <outlet property="loadingGIF" destination="oDD-jo-4RC" id="8c7-fv-3bd"/>
+                        <outlet property="searchBar" destination="6rM-NA-5gZ" id="LHf-h1-JtU"/>
+                        <outlet property="searchTableView" destination="eAY-A0-wut" id="eC8-Zw-Nkp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1B-sg-14t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1458" y="92"/>
+            <point key="canvasLocation" x="1457.9710144927537" y="91.741071428571431"/>
         </scene>
         <!--Profile-->
         <scene sceneID="s2w-B6-gS0">
@@ -403,6 +522,8 @@
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="placeholder_image" width="1181" height="886"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="user" width="1200" height="1600"/>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

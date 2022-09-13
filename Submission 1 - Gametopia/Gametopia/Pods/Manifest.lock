@@ -6,6 +6,7 @@ PODS:
   - Kingfisher (7.3.2)
   - ObjectMapper (3.5.3)
   - SkeletonView (1.30.2)
+  - SwiftyGif (5.4.3)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - AlamofireObjectMapper
   - Kingfisher (~> 7.0)
   - SkeletonView
+  - SwiftyGif
   - SwiftyJSON
 
 SPEC REPOS:
@@ -22,6 +24,7 @@ SPEC REPOS:
     - Kingfisher
     - ObjectMapper
     - SkeletonView
+    - SwiftyGif
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -30,8 +33,9 @@ SPEC CHECKSUMS:
   Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   SkeletonView: 2a4536db5ded1b422459a73e05e08b20c6b3a69b
+  SwiftyGif: 6c3eafd0ce693cad58bb63d2b2fb9bacb8552780
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: e3fbc779e257999de04c963413b4768b2fc2fad6
+PODFILE CHECKSUM: 52f56aab2840ed17a1944b5c302c1f2e07f13bd1
 
 COCOAPODS: 1.11.3
