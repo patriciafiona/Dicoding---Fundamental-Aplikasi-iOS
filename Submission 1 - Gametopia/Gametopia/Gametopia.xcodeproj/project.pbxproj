@@ -28,6 +28,8 @@
 		F749C0E128CE177300E7D3A2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749C0E028CE177300E7D3A2 /* Utils.swift */; };
 		F749C0F128CE253B00E7D3A2 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749C0F028CE253B00E7D3A2 /* Slide.swift */; };
 		F749C0F328CE256900E7D3A2 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = F749C0F228CE256900E7D3A2 /* Slide.xib */; };
+		F79E6A9828D171360064F8A7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E6A9728D171360064F8A7 /* DetailView.swift */; };
+		F79E6A9A28D171BA0064F8A7 /* DetailGameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E6A9928D171BA0064F8A7 /* DetailGameResponse.swift */; };
 		F7CF243728CEDE0C00BECD89 /* EvilEmpire.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CF243628CEDE0C00BECD89 /* EvilEmpire.ttf */; };
 		F7CF243928CEDE1700BECD89 /* VerminVibes.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CF243828CEDE1700BECD89 /* VerminVibes.ttf */; };
 		F7CF244528CEDE7E00BECD89 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF244428CEDE7E00BECD89 /* NetworkService.swift */; };
@@ -105,6 +107,8 @@
 		F749C0E028CE177300E7D3A2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F749C0F028CE253B00E7D3A2 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		F749C0F228CE256900E7D3A2 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		F79E6A9728D171360064F8A7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		F79E6A9928D171BA0064F8A7 /* DetailGameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameResponse.swift; sourceTree = "<group>"; };
 		F7CF243628CEDE0C00BECD89 /* EvilEmpire.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = EvilEmpire.ttf; path = "../../../assets/fonts/evil-empire-font/EvilEmpire.ttf"; sourceTree = "<group>"; };
 		F7CF243828CEDE1700BECD89 /* VerminVibes.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = VerminVibes.ttf; path = "../../../assets/fonts/vermin-vibes-v-font/VerminVibes.ttf"; sourceTree = "<group>"; };
 		F7CF244428CEDE7E00BECD89 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -269,10 +273,8 @@
 		F749C0D528CE097D00E7D3A2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F7CF246228CF4B6300BECD89 /* Profile */,
-				F749C0F528CE293600E7D3A2 /* Home */,
-				F73BAB3D28CE419900AEA70E /* Search */,
-				F749C0AA28CE096800E7D3A2 /* Main.storyboard */,
+				F79E6A9628D1710D0064F8A7 /* Detail Page */,
+				F79E6A9528D170FE0064F8A7 /* Main Page */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,6 +299,25 @@
 				F749C0DE28CE16C600E7D3A2 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		F79E6A9528D170FE0064F8A7 /* Main Page */ = {
+			isa = PBXGroup;
+			children = (
+				F7CF246228CF4B6300BECD89 /* Profile */,
+				F749C0F528CE293600E7D3A2 /* Home */,
+				F73BAB3D28CE419900AEA70E /* Search */,
+				F749C0AA28CE096800E7D3A2 /* Main.storyboard */,
+			);
+			path = "Main Page";
+			sourceTree = "<group>";
+		};
+		F79E6A9628D1710D0064F8A7 /* Detail Page */ = {
+			isa = PBXGroup;
+			children = (
+				F79E6A9728D171360064F8A7 /* DetailView.swift */,
+			);
+			path = "Detail Page";
 			sourceTree = "<group>";
 		};
 		F7CF243528CEDDFE00BECD89 /* Fonts */ = {
@@ -340,6 +361,7 @@
 				F7CF246628CF8A6F00BECD89 /* GenreResponse.swift */,
 				F7CF247628D0389B00BECD89 /* DeveloperResponse.swift */,
 				F732C3A728D0D621001B4A3B /* SearchResponse.swift */,
+				F79E6A9928D171BA0064F8A7 /* DetailGameResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -611,6 +633,7 @@
 			files = (
 				F7CF247B28D0455C00BECD89 /* DeveloperTableViewCell.swift in Sources */,
 				F749C0E128CE177300E7D3A2 /* Utils.swift in Sources */,
+				F79E6A9828D171360064F8A7 /* DetailView.swift in Sources */,
 				F749C0A928CE096800E7D3A2 /* SearchViewController.swift in Sources */,
 				F7CF246428CF4B7A00BECD89 /* ProfileViewController.swift in Sources */,
 				F7CF244528CEDE7E00BECD89 /* NetworkService.swift in Sources */,
@@ -623,6 +646,7 @@
 				F732C3A828D0D621001B4A3B /* SearchResponse.swift in Sources */,
 				F749C0DF28CE16C600E7D3A2 /* HomeViewController.swift in Sources */,
 				F732C3AA28D0DB93001B4A3B /* SearchTableViewCell.swift in Sources */,
+				F79E6A9A28D171BA0064F8A7 /* DetailGameResponse.swift in Sources */,
 				F7CF245F28CEE37A00BECD89 /* GameResponse.swift in Sources */,
 				F7CF246728CF8A6F00BECD89 /* GenreResponse.swift in Sources */,
 			);
@@ -805,11 +829,13 @@
 				DEVELOPMENT_TEAM = RDA574N926;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gametopia/FileSystem/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -834,11 +860,13 @@
 				DEVELOPMENT_TEAM = RDA574N926;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gametopia/FileSystem/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

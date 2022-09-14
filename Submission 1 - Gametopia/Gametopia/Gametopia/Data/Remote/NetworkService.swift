@@ -99,6 +99,27 @@ class NetworkService {
             }
         }
     }
+    
+    func getGameDetails(id: Int, completionHandler: @escaping (DetailGameResponse?) -> ()) {
+        AF.request(
+            "https://api.rawg.io/api/games/\(id)",
+            method: .get,
+            parameters: ["key": apiKey],
+            encoder: URLEncodedFormParameterEncoder.default
+        ).response { resp in
+            switch resp.result {
+                case .success(_):
+                    // Convert JSON String to Model
+                    if let data = resp.data {
+                        let jsonString = String(data: data, encoding: .utf8)
+                        let listResult = Mapper<DetailGameResponse>().map(JSONObject: jsonString?.toJSON())
+                        completionHandler(listResult)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+    }
 }
 
 extension String {

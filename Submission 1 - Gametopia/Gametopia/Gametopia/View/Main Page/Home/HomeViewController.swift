@@ -173,10 +173,19 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
                     
                     viewRounded(view: viewItem, radius: 15)
                     
+                    let gesture = GameTapGesture(target: self, action: #selector(self.goToDetailPage))
+                    viewItem.addGestureRecognizer(gesture)
+                    gesture.id = (data?.id)!
+                    
                     self.discoveryContainer.addArrangedSubview(viewItem)
                 }
             }
         }
+    }
+    
+    @objc private func goToDetailPage(sender : GameTapGesture) {
+        let view = DetailView(id: sender.id)
+        navigationController?.pushViewController(UIHostingController(rootView: view), animated: true)
     }
     
     private func loadGenreFromAPI(){
@@ -379,6 +388,10 @@ extension HomeViewController: UITableViewDataSource {
       
       return cell
   }
+}
+
+class GameTapGesture: UITapGestureRecognizer {
+    var id = Int()
 }
 
 extension HomeViewController: SkeletonTableViewDataSource{

@@ -5,7 +5,8 @@
 //  Created by Patricia Fiona on 11/09/22.
 //
 
-import Foundation
+import WebKit
+import SwiftUI
 import UIKit
 
 func imageCircle(imageView: UIImageView){
@@ -35,4 +36,24 @@ func textShadow(label: UILabel){
     label.layer.shadowOpacity = 1.0
     label.layer.shadowOffset = CGSize(width: 4, height: 4)
     label.layer.masksToBounds = false
+}
+
+struct HTMLStringView: UIViewRepresentable {
+    let htmlContent: String
+
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
+    }
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        let styles = "<font face='Arial' size='12' color= 'white'>%@"
+        let text = String(format: styles, htmlContent)
+        
+        uiView.loadHTMLString(text, baseURL: nil)
+        uiView.tintColor = UIColor.white
+        
+        uiView.isOpaque = false
+        uiView.backgroundColor = UIColor.clear
+        uiView.scrollView.backgroundColor = UIColor.clear
+    }
 }
