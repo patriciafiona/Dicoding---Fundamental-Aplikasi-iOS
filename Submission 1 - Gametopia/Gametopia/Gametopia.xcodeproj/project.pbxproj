@@ -15,6 +15,7 @@
 		F732C3AA28D0DB93001B4A3B /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F732C3A928D0DB93001B4A3B /* SearchTableViewCell.swift */; };
 		F73BAB3928CE3C0B00AEA70E /* DiscoveryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73BAB3828CE3C0B00AEA70E /* DiscoveryView.xib */; };
 		F73BAB3B28CE3C1600AEA70E /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BAB3A28CE3C1600AEA70E /* DiscoveryView.swift */; };
+		F743713728D2353F0090B8ED /* PlatformItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743713628D2353F0090B8ED /* PlatformItem.swift */; };
 		F749C0A528CE096800E7D3A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749C0A428CE096800E7D3A2 /* AppDelegate.swift */; };
 		F749C0A728CE096800E7D3A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749C0A628CE096800E7D3A2 /* SceneDelegate.swift */; };
 		F749C0A928CE096800E7D3A2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749C0A828CE096800E7D3A2 /* SearchViewController.swift */; };
@@ -90,6 +91,7 @@
 		F732C3A928D0DB93001B4A3B /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		F73BAB3828CE3C0B00AEA70E /* DiscoveryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoveryView.xib; sourceTree = "<group>"; };
 		F73BAB3A28CE3C1600AEA70E /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
+		F743713628D2353F0090B8ED /* PlatformItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformItem.swift; sourceTree = "<group>"; };
 		F749C0A128CE096800E7D3A2 /* Gametopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gametopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F749C0A428CE096800E7D3A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F749C0A628CE096800E7D3A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				F79E6A9728D171360064F8A7 /* DetailView.swift */,
+				F743713628D2353F0090B8ED /* PlatformItem.swift */,
 			);
 			path = "Detail Page";
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				F7CF247B28D0455C00BECD89 /* DeveloperTableViewCell.swift in Sources */,
 				F749C0E128CE177300E7D3A2 /* Utils.swift in Sources */,
 				F79E6A9828D171360064F8A7 /* DetailView.swift in Sources */,
+				F743713728D2353F0090B8ED /* PlatformItem.swift in Sources */,
 				F749C0A928CE096800E7D3A2 /* SearchViewController.swift in Sources */,
 				F7CF246428CF4B7A00BECD89 /* ProfileViewController.swift in Sources */,
 				F7CF244528CEDE7E00BECD89 /* NetworkService.swift in Sources */,

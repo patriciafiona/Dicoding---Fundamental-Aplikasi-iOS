@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Kingfisher
+import SkeletonUI
 
 struct DetailView: View {
     @State private var id: Int
@@ -55,6 +56,9 @@ struct RootContent: View{
                                 )
                                 .overlay{
                                     HeaderOverlay(game: game)
+                                        .skeleton(with: game == nil)
+                                        .shape(type: .rectangle)
+                                        .appearance(type: .solid(color: .yellow, background: .black))
                                 }
                         }
                         
@@ -64,12 +68,67 @@ struct RootContent: View{
                     Divider()
                     
                     VStack(alignment: .leading){
+                        Text("Genres")
+                            .font(Font.custom("EvilEmpire", size: 24, relativeTo: .title))
+                            .foregroundColor(.yellow)
+                            .skeleton(with: game == nil)
+                            .shape(type: .rectangle)
+                            .appearance(type: .solid(color: .yellow, background: .black))
+                        ScrollView{
+                            HStack{
+                                if(game?.genres! != nil){
+                                    ForEach((game?.genres)!, id: \.self.id){genreData in
+                                        Button(action: {}) {
+                                            Text(genreData.name)
+                                                .font(Font.custom("EvilEmpire", size: 14, relativeTo: .title))
+                                                .fontWeight(.bold)
+                                        }
+                                        .padding(.vertical, 10)
+                                        .padding(.horizontal, 15)
+                                        .foregroundColor(.yellow)
+                                        .background(Color.indigo)
+                                        .cornerRadius(.infinity)
+                                        .lineLimit(1)
+                                    }
+                                }
+                            }
+                        }
+                        
                         Text("About")
                             .font(Font.custom("EvilEmpire", size: 24, relativeTo: .title))
                             .foregroundColor(.yellow)
+                            .skeleton(with: game == nil)
+                            .shape(type: .rectangle)
+                            .appearance(type: .solid(color: .yellow, background: .black))
                         
                         HTMLStringView(htmlContent: game?.description ?? "No description")
                             .frame(height: 350)
+                            .skeleton(with: game == nil)
+                            .shape(type: .rectangle)
+                            .appearance(type: .solid(color: .yellow, background: .black))
+                                            .multiline(lines: 20, scales: [1: 0.5])
+                        Text("Platform")
+                            .font(Font.custom("EvilEmpire", size: 24, relativeTo: .title))
+                            .foregroundColor(.yellow)
+                            .skeleton(with: game == nil)
+                            .shape(type: .rectangle)
+                            .appearance(type: .solid(color: .yellow, background: .black))
+                        
+                        if(game?.platforms! != nil){
+                            LazyVStack{
+                                ForEach((game?.platforms)!, id: \.self.platform?.id){platformData in
+                                    PlatformItem(platform: platformData.platform)
+                                        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+                                }
+                            }
+                        }
+                        
+                        Text("Developer")
+                            .font(Font.custom("EvilEmpire", size: 24, relativeTo: .title))
+                            .foregroundColor(.yellow)
+                            .skeleton(with: game == nil)
+                            .shape(type: .rectangle)
+                            .appearance(type: .solid(color: .yellow, background: .black))
                     }
                     .padding(10)
                 }

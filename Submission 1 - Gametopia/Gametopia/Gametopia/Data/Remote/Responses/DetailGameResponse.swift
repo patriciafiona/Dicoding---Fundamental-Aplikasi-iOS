@@ -66,7 +66,7 @@ class DetailGameResponse: Mappable {
 }
 
 class DetailPlatform: Mappable{
-    var plaform: PlatformDetails?
+    var platform: PlatformDetails?
     var releasedAt: String?
     var requirements: PlatformRequirement?
     
@@ -75,7 +75,7 @@ class DetailPlatform: Mappable{
     }
     
     func mapping(map: Map) {
-        plaform <- map["plaform"]
+        platform <- map["platform"]
         releasedAt <- map["released_at"]
         requirements <- map["requirements"]
     }

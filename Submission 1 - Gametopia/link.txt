@@ -16,3 +16,7 @@ https://fluffy.es/scrollview-storyboard-xcode-11/
 https://cocoapods.org/pods/SkeletonView#-guides
 https://medium.com/@osamaazmat/skeletonview-animation-in-swift-uitableview-d5508f2a736c
 
+https://github.com/CSolanaM/SkeletonUI
+
+//Token github
+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

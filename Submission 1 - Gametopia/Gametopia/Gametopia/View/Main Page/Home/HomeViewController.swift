@@ -72,7 +72,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
         for _ in 0...totalDiscoverySkeleton{
             let viewItem:DiscoveryView = Bundle.main.loadNibNamed("DiscoveryView", owner: self, options: nil)?.first as! DiscoveryView
             
-            viewItem.container.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
+            viewItem.container.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation, transition: .crossDissolve(0.25))
             
             self.discoveryContainer.addArrangedSubview(viewItem)
         }
@@ -241,11 +241,11 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
         if shouldAnimateGenre{
             cell.darkTransparent.isHidden = true
             cell.imageViewSkeletonTemp.isHidden = false
-            cell.cellContainer.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
+            cell.cellContainer.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation, transition: .crossDissolve(0.25))
         }else{
             cell.darkTransparent.isHidden = false
             cell.imageViewSkeletonTemp.isHidden = true
-            cell.cellContainer.hideSkeleton()
+            cell.cellContainer.hideSkeleton(transition: .crossDissolve(0.25))
         }
         
         return cell
@@ -379,11 +379,11 @@ extension HomeViewController: UITableViewDataSource {
       if shouldAnimateDeveloper{
           cell.darkTransparent.isHidden = true
           cell.name.layer.shadowOpacity = 0
-          cell.container.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
+          cell.container.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation, transition: .crossDissolve(0.25))
       }else{
           cell.darkTransparent.isHidden = false
           cell.name.layer.shadowOpacity = 1
-          cell.container.hideSkeleton()
+          cell.container.hideSkeleton(transition: .crossDissolve(0.25))
       }
       
       return cell
