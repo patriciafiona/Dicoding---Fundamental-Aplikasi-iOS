@@ -12,7 +12,7 @@ import ObjectMapper
 class NetworkService {
     
     // MARK: Gunakan API Key dalam akun Anda.
-    let apiKey = "e99fe74e633e4257a3498d8af7d27560"
+    let apiKey = Secrets.RawgApiKey
     let orderByRatingDesc = "-rating"
     let page = "1"
     
