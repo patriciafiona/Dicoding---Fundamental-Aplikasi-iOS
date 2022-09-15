@@ -304,7 +304,7 @@
                                     <textInputTraits key="textInputTraits" keyboardType="alphabet" keyboardAppearance="alert"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchResultCell" rowHeight="90" id="AfG-go-bG4" customClass="SearchTableViewCell" customModule="Gametopia" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="searchResultCell" rowHeight="90" id="AfG-go-bG4" customClass="SearchTableViewCell" customModule="Gametopia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="101" width="374" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AfG-go-bG4" id="wwS-2x-NG8">

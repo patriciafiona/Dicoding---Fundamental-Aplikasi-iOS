@@ -102,11 +102,13 @@ struct RootContent: View{
                             .appearance(type: .solid(color: .yellow, background: .black))
                         
                         HTMLStringView(htmlContent: game?.description ?? "No description")
-                            .frame(height: 350)
+                            .frame(minHeight: 200, maxHeight: 400)
+                            .padding(.bottom, 20)
                             .skeleton(with: game == nil)
                             .shape(type: .rectangle)
                             .appearance(type: .solid(color: .yellow, background: .black))
                                             .multiline(lines: 20, scales: [1: 0.5])
+                        
                         Text("Platform")
                             .font(Font.custom("EvilEmpire", size: 24, relativeTo: .title))
                             .foregroundColor(.yellow)
@@ -117,18 +119,86 @@ struct RootContent: View{
                         if(game?.platforms! != nil){
                             LazyVStack{
                                 ForEach((game?.platforms)!, id: \.self.platform?.id){platformData in
-                                    PlatformItem(platform: platformData.platform)
+                                    PlatformItem(released_at: game?.released, platform: platformData.platform)
                                         .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                                 }
                             }
+                            .padding(.bottom, 20)
+                            .skeleton(with: game == nil)
+                            .shape(type: .rectangle)
+                            .appearance(type: .solid(color: .yellow, background: .black))
                         }
                         
-                        Text("Developer")
+                        HStack{
+                            VStack(alignment: .leading){
+                                Text("Developer")
+                                    .font(Font.custom("EvilEmpire", size: 24, relativeTo: .title))
+                                    .foregroundColor(.yellow)
+                                    .skeleton(with: game == nil)
+                                    .shape(type: .rectangle)
+                                    .appearance(type: .solid(color: .yellow, background: .black))
+                                if(game?.developers! != nil){
+                                    LazyVStack(alignment: .leading){
+                                        ForEach((game?.developers)!, id: \.self.id){developer in
+                                            Text(developer.name)
+                                                .foregroundColor(.white)
+                                                .font(.system(size: 14))
+                                                .underline()
+                                        }
+                                    }
+                                    .skeleton(with: game == nil)
+                                    .shape(type: .rectangle)
+                                    .appearance(type: .solid(color: .yellow, background: .black))
+                                }
+                            }
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            
+                            VStack(alignment: .leading){
+                                Text("Publisher")
+                                    .font(Font.custom("EvilEmpire", size: 24, relativeTo: .title))
+                                    .foregroundColor(.yellow)
+                                    .skeleton(with: game == nil)
+                                    .shape(type: .rectangle)
+                                    .appearance(type: .solid(color: .yellow, background: .black))
+                                
+                                if(game?.publishers! != nil){
+                                    LazyVStack(alignment: .leading){
+                                        ForEach((game?.publishers)!, id: \.self.id){publisher in
+                                            Text(publisher.name)
+                                                .foregroundColor(.white)
+                                                .font(.system(size: 14))
+                                                .underline()
+                                        }
+                                    }
+                                    .skeleton(with: game == nil)
+                                    .shape(type: .rectangle)
+                                    .appearance(type: .solid(color: .yellow, background: .black))
+                                }
+                            }
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                        }
+                        .padding(.bottom, 20)
+                        
+                        Text("Website")
                             .font(Font.custom("EvilEmpire", size: 24, relativeTo: .title))
                             .foregroundColor(.yellow)
                             .skeleton(with: game == nil)
                             .shape(type: .rectangle)
                             .appearance(type: .solid(color: .yellow, background: .black))
+                        
+                        if let websiteLink = (game?.website!){
+                            Button(action: {
+                                if let url = URL(string: websiteLink) {
+                                    UIApplication.shared.open(url)
+                                }
+                            }) {
+                                Text(websiteLink)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14))
+                                    .underline()
+                            }
+                        }
+                        
                     }
                     .padding(10)
                 }
@@ -150,7 +220,7 @@ struct RootContent: View{
                     })
             //.edgesIgnoringSafeArea(.all)
         }
-        .edgesIgnoringSafeArea(.all)
+        .phoneOnlyStackNavigationView()
         .statusBar(hidden: true)
         .onAppear() {
             let network = NetworkService()
@@ -196,6 +266,7 @@ struct HeaderOverlay: View{
                         .fontWeight(.bold)
                         .shadow(color: .black, radius: 5)
                 }
+                
                 HStack{
                     VStack(alignment: .leading){
                         Text("Added to")
@@ -205,12 +276,13 @@ struct HeaderOverlay: View{
                             Text("Wishlist")
                                 .foregroundColor(.white)
                                 .fontWeight(.bold)
-                                .font(.title3)
+                                .font(.system(size: 14))
+                                .lineLimit(1)
                             
                             Text("\(game?.added ?? 0)")
                                 .foregroundColor(Color(red: 241 / 255, green: 242 / 255, blue: 246 / 255))
                                 .fontWeight(.bold)
-                                .font(.title3)
+                                .font(.system(size: 14))
                         }
                         
                     }
@@ -218,6 +290,55 @@ struct HeaderOverlay: View{
                     .padding(.vertical, 10)
                     .overlay(RoundedRectangle(cornerRadius: 15)
                         .stroke(.white, lineWidth: 3))
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    
+                    VStack(alignment: .leading){
+                        Text("Rating count")
+                            .foregroundColor(Color(red: 241 / 255, green: 242 / 255, blue: 246 / 255))
+                            .font(.caption)
+                        HStack{
+                            Text("\(game?.ratingsCount ?? 0)")
+                                .foregroundColor(Color(red: 241 / 255, green: 242 / 255, blue: 246 / 255))
+                                .fontWeight(.bold)
+                                .font(.system(size: 14))
+                            
+                            Text("Rating")
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                                .font(.system(size: 14))
+                                .lineLimit(1)
+                        }
+                        
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
+                    .overlay(RoundedRectangle(cornerRadius: 15)
+                        .stroke(.white, lineWidth: 3))
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    
+                    VStack(alignment: .leading){
+                        Text("Achievements")
+                            .foregroundColor(Color(red: 241 / 255, green: 242 / 255, blue: 246 / 255))
+                            .font(.caption)
+                        HStack{
+                            Text("\(game?.achievementsCount ?? 0)")
+                                .foregroundColor(Color(red: 241 / 255, green: 242 / 255, blue: 246 / 255))
+                                .fontWeight(.bold)
+                                .font(.system(size: 14))
+                            
+                            Text("Achievements")
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                                .font(.system(size: 14))
+                                .lineLimit(1)
+                        }
+                        
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
+                    .overlay(RoundedRectangle(cornerRadius: 15)
+                        .stroke(.white, lineWidth: 3))
+                    .frame(minWidth: 0, maxWidth: .infinity)
                 }
             }
             .padding()
@@ -227,16 +348,26 @@ struct HeaderOverlay: View{
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(id: 0)
+        DetailView(id: 43050)
     }
 }
 
 extension String {
     func markdownToAttributed() -> AttributedString {
         do {
-            return try AttributedString(markdown: self) /// convert to AttributedString
+            return try AttributedString(markdown: self)
         } catch {
             return AttributedString("Error parsing markdown: \(error)")
+        }
+    }
+}
+
+extension View {
+    func phoneOnlyStackNavigationView() -> some View {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return AnyView(self.navigationViewStyle(StackNavigationViewStyle()))
+        } else {
+            return AnyView(self)
         }
     }
 }

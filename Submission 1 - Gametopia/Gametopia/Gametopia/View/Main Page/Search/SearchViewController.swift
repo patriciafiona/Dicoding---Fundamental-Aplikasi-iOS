@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftyGif
+import SwiftUI
 
 class SearchViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate {
     
@@ -110,8 +111,18 @@ class SearchViewController: UIViewController, UITableViewDataSource, UISearchBar
         }
         viewRounded(view: cell.gameImage, radius: 10)
         
+        let gesture = GameTapGesture(target: self, action: #selector(self.goToDetailPage))
+        cell.addGestureRecognizer(gesture)
+        gesture.id = (data.id)!
+        
         return cell
     }
+    
+    @objc private func goToDetailPage(sender : GameTapGesture) {
+        let view = DetailView(id: sender.id)
+        navigationController?.pushViewController(UIHostingController(rootView: view), animated: true)
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         isLoadingNow(status: true)
         

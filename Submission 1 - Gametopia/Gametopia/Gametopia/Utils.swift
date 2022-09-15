@@ -46,10 +46,12 @@ struct HTMLStringView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        let styles = "<font face='Arial' size='12' color= 'white'>%@"
+        let headerString = "<head><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'></head>"
+        
+        let styles = "<font face='Arial' size='5' color= 'white'>%@"
         let text = String(format: styles, htmlContent)
         
-        uiView.loadHTMLString(text, baseURL: nil)
+        uiView.loadHTMLString(headerString + text, baseURL: nil)
         uiView.tintColor = UIColor.white
         
         uiView.isOpaque = false

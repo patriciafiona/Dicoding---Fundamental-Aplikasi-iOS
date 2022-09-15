@@ -61,6 +61,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
             sliderScrollView.isHidden = result
             sliderControll.isHidden = result
         }
+        genreCollectionView.reloadData()
+        developerTableView.reloadData()
     }
     
     private func initView(){

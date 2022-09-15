@@ -9,33 +9,63 @@ import SwiftUI
 import Kingfisher
 
 struct PlatformItem: View {
+    var released_at: String?
     var platform: PlatformDetails?
+    @State private var platformImage: String = "gametopia_text_logo"
     
     var body: some View {
         HStack {
-            KFImage.url(URL(string: (platform?.imageBackground) ?? ""))
-                .placeholder {
-                    Image("gametopia_icon")
-                        .resizable()
-                        .scaledToFit()
-                }
-                .cacheMemoryOnly()
-                .fade(duration: 0.25)
+            Image(platformImage)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 80, height: 80)
+                .frame(width: 50, height: 50)
             
             Divider()
             
-            VStack{
+            VStack(alignment: .leading){
                 Text(platform?.name ?? "Unknown Platform")
                     .font(Font.custom("EvilEmpire", size: 24, relativeTo: .title))
                     .foregroundColor(.yellow)
+                if(released_at != nil){
+                    VStack(alignment: .leading){
+                        Text("Release on \(dateFormat(dateTxt: released_at!))")
+                            .font(.system(size: 12))
+                            .foregroundColor(.white)
+                        Text("Total game in this platform are \(platform?.gamesCount ?? 0)")
+                            .font(.system(size: 12))
+                            .foregroundColor(.white)
+                    }
+                }else{
+                    Text("Total game in this platform are \(platform?.gamesCount ?? 0)")
+                        .font(.system(size: 12))
+                        .foregroundColor(.white)
+                }
+                
             }
 
             Spacer()
         }
         .background(Color.black)
+        .onAppear(){
+            if let name: String = (platform?.name!) {
+                if(name.lowercased().contains("mac") || name.contains("ios")){
+                    platformImage = "platform_mac"
+                }else if(name.lowercased().contains("pc")){
+                    platformImage = "platform_pc"
+                }else if(name.lowercased().contains("linux")){
+                    platformImage = "platform_linux"
+                }else if(name.lowercased().contains("android")){
+                    platformImage = "platform_android"
+                }else if(name.lowercased().contains("xbox")){
+                    platformImage = "platform_xbox"
+                }else if(name.lowercased().contains("playstation")){
+                    platformImage = "platform_playstation"
+                }else if(name.lowercased().contains("nintendo")){
+                    platformImage = "platform_nintendo"
+                }else{
+                    platformImage = "gametopia_text_logo"
+                }
+            }
+        }
     }
 }
 
