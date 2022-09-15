@@ -230,6 +230,11 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let view = GenreDetailView(genreData: genres[indexPath.item])
+        navigationController?.pushViewController(UIHostingController(rootView: view), animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return totalGenreSkeleton
     }
@@ -373,6 +378,10 @@ extension HomeViewController: UITableViewDataSource {
           for i in 0 ..< listItemGame.count{
               listItemGame[i]!.contentHorizontalAlignment = .left
               listItemGame[i]!.setTitle(dev.games?[i].name, for: .normal)
+              
+              let gesture = GameTapGesture(target: self, action: #selector(self.goToDetailPage))
+              listItemGame[i]!.addGestureRecognizer(gesture)
+              gesture.id = (dev.games?[i].id)!
               
               listAddedText[i]!.text = "\(dev.games?[i].added ?? 0)"
           }

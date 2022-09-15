@@ -203,10 +203,10 @@ struct RootContent: View{
                     .padding(10)
                 }
                 .navigationBarTitle("Details")
+                .padding(.bottom, 50)
             }
             .background(Color.black)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-            .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
@@ -220,6 +220,7 @@ struct RootContent: View{
                     })
             //.edgesIgnoringSafeArea(.all)
         }
+        .navigationBarBackButtonHidden(true)
         .phoneOnlyStackNavigationView()
         .statusBar(hidden: true)
         .onAppear() {
@@ -282,39 +283,15 @@ struct HeaderOverlay: View{
                             Text("\(game?.added ?? 0)")
                                 .foregroundColor(Color(red: 241 / 255, green: 242 / 255, blue: 246 / 255))
                                 .fontWeight(.bold)
-                                .font(.system(size: 14))
+                                .font(.system(size: 12))
                         }
                         
                     }
-                    .padding(.horizontal, 20)
+                    .padding(.horizontal, 10)
                     .padding(.vertical, 10)
                     .overlay(RoundedRectangle(cornerRadius: 15)
                         .stroke(.white, lineWidth: 3))
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    
-                    VStack(alignment: .leading){
-                        Text("Rating count")
-                            .foregroundColor(Color(red: 241 / 255, green: 242 / 255, blue: 246 / 255))
-                            .font(.caption)
-                        HStack{
-                            Text("\(game?.ratingsCount ?? 0)")
-                                .foregroundColor(Color(red: 241 / 255, green: 242 / 255, blue: 246 / 255))
-                                .fontWeight(.bold)
-                                .font(.system(size: 14))
-                            
-                            Text("Rating")
-                                .foregroundColor(.white)
-                                .fontWeight(.bold)
-                                .font(.system(size: 14))
-                                .lineLimit(1)
-                        }
-                        
-                    }
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 10)
-                    .overlay(RoundedRectangle(cornerRadius: 15)
-                        .stroke(.white, lineWidth: 3))
-                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     
                     VStack(alignment: .leading){
                         Text("Achievements")
@@ -324,7 +301,7 @@ struct HeaderOverlay: View{
                             Text("\(game?.achievementsCount ?? 0)")
                                 .foregroundColor(Color(red: 241 / 255, green: 242 / 255, blue: 246 / 255))
                                 .fontWeight(.bold)
-                                .font(.system(size: 14))
+                                .font(.system(size: 12))
                             
                             Text("Achievements")
                                 .foregroundColor(.white)
@@ -334,12 +311,39 @@ struct HeaderOverlay: View{
                         }
                         
                     }
-                    .padding(.horizontal, 20)
+                    .padding(.horizontal, 10)
                     .padding(.vertical, 10)
                     .overlay(RoundedRectangle(cornerRadius: 15)
                         .stroke(.white, lineWidth: 3))
-                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                    
+                    VStack(alignment: .leading){
+                        Text("Rating")
+                            .foregroundColor(Color(red: 241 / 255, green: 242 / 255, blue: 246 / 255))
+                            .font(.caption)
+                        HStack{
+                            Text("\(game?.ratingsCount ?? 0)")
+                                .foregroundColor(Color(red: 241 / 255, green: 242 / 255, blue: 246 / 255))
+                                .fontWeight(.bold)
+                                .font(.system(size: 12))
+                            
+                            Text("Rating")
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                                .font(.system(size: 14))
+                                .lineLimit(1)
+                        }
+                        
+                    }
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 10)
+                    .overlay(RoundedRectangle(cornerRadius: 15)
+                        .stroke(.white, lineWidth: 3))
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                    
+                    Spacer()
                 }
+                
             }
             .padding()
         }

@@ -16,6 +16,8 @@
 		F73BAB3928CE3C0B00AEA70E /* DiscoveryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73BAB3828CE3C0B00AEA70E /* DiscoveryView.xib */; };
 		F73BAB3B28CE3C1600AEA70E /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BAB3A28CE3C1600AEA70E /* DiscoveryView.swift */; };
 		F743713728D2353F0090B8ED /* PlatformItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743713628D2353F0090B8ED /* PlatformItem.swift */; };
+		F743713A28D314560090B8ED /* GenreDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743713928D314560090B8ED /* GenreDetailView.swift */; };
+		F743713C28D315640090B8ED /* DetailGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743713B28D315640090B8ED /* DetailGenre.swift */; };
 		F749C0A528CE096800E7D3A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749C0A428CE096800E7D3A2 /* AppDelegate.swift */; };
 		F749C0A728CE096800E7D3A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749C0A628CE096800E7D3A2 /* SceneDelegate.swift */; };
 		F749C0A928CE096800E7D3A2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749C0A828CE096800E7D3A2 /* SearchViewController.swift */; };
@@ -92,6 +94,8 @@
 		F73BAB3828CE3C0B00AEA70E /* DiscoveryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoveryView.xib; sourceTree = "<group>"; };
 		F73BAB3A28CE3C1600AEA70E /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
 		F743713628D2353F0090B8ED /* PlatformItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformItem.swift; sourceTree = "<group>"; };
+		F743713928D314560090B8ED /* GenreDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDetailView.swift; sourceTree = "<group>"; };
+		F743713B28D315640090B8ED /* DetailGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGenre.swift; sourceTree = "<group>"; };
 		F749C0A128CE096800E7D3A2 /* Gametopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gametopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F749C0A428CE096800E7D3A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F749C0A628CE096800E7D3A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +214,14 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		F743713828D314280090B8ED /* Genre Detail Page */ = {
+			isa = PBXGroup;
+			children = (
+				F743713928D314560090B8ED /* GenreDetailView.swift */,
+			);
+			path = "Genre Detail Page";
+			sourceTree = "<group>";
+		};
 		F749C09828CE096800E7D3A2 = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +287,7 @@
 		F749C0D528CE097D00E7D3A2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F743713828D314280090B8ED /* Genre Detail Page */,
 				F79E6A9628D1710D0064F8A7 /* Detail Page */,
 				F79E6A9528D170FE0064F8A7 /* Main Page */,
 			);
@@ -365,6 +378,7 @@
 				F7CF247628D0389B00BECD89 /* DeveloperResponse.swift */,
 				F732C3A728D0D621001B4A3B /* SearchResponse.swift */,
 				F79E6A9928D171BA0064F8A7 /* DetailGameResponse.swift */,
+				F743713B28D315640090B8ED /* DetailGenre.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -646,6 +660,7 @@
 				F73BAB3B28CE3C1600AEA70E /* DiscoveryView.swift in Sources */,
 				F749C0A528CE096800E7D3A2 /* AppDelegate.swift in Sources */,
 				F749C0F128CE253B00E7D3A2 /* Slide.swift in Sources */,
+				F743713C28D315640090B8ED /* DetailGenre.swift in Sources */,
 				F749C0A728CE096800E7D3A2 /* SceneDelegate.swift in Sources */,
 				F732C3A828D0D621001B4A3B /* SearchResponse.swift in Sources */,
 				F749C0DF28CE16C600E7D3A2 /* HomeViewController.swift in Sources */,
@@ -653,6 +668,7 @@
 				F79E6A9A28D171BA0064F8A7 /* DetailGameResponse.swift in Sources */,
 				F7CF245F28CEE37A00BECD89 /* GameResponse.swift in Sources */,
 				F7CF246728CF8A6F00BECD89 /* GenreResponse.swift in Sources */,
+				F743713A28D314560090B8ED /* GenreDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
