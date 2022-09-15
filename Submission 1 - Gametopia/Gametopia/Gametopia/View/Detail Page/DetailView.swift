@@ -78,7 +78,7 @@ struct RootContent: View{
                             HStack{
                                 if(game?.genres! != nil){
                                     ForEach((game?.genres)!, id: \.self.id){genreData in
-                                        Button(action: {}) {
+                                        VStack{
                                             Text(genreData.name)
                                                 .font(Font.custom("EvilEmpire", size: 14, relativeTo: .title))
                                                 .fontWeight(.bold)
