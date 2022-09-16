@@ -104,6 +104,12 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
         loadDeveloperFromAPI()
     }
     
+    @IBAction func onDiscoveryBtnClick(_ sender: Any) {
+        let view = DiscoveryByRatingView()
+        navigationController?.pushViewController(UIHostingController(rootView: view), animated: true)
+    }
+    
+    
     private func setHomeBanner(completion: @escaping (Bool) -> Void){
         let queue = DispatchQueue(label: "com.patriciafiona.gametopia")
         queue.sync {

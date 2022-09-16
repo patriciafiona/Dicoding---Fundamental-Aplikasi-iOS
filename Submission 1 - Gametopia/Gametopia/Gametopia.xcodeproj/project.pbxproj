@@ -19,6 +19,8 @@
 		F743713A28D314560090B8ED /* GenreDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743713928D314560090B8ED /* GenreDetailView.swift */; };
 		F743713C28D315640090B8ED /* DetailGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743713B28D315640090B8ED /* DetailGenre.swift */; };
 		F743713E28D327900090B8ED /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743713D28D327900090B8ED /* SecretKeys.swift */; };
+		F743714128D37E5C0090B8ED /* DiscoveryByRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743714028D37E5C0090B8ED /* DiscoveryByRatingView.swift */; };
+		F743714428D424130090B8ED /* GenreFilterDropdownOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743714328D424130090B8ED /* GenreFilterDropdownOption.swift */; };
 		F749C0A528CE096800E7D3A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749C0A428CE096800E7D3A2 /* AppDelegate.swift */; };
 		F749C0A728CE096800E7D3A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749C0A628CE096800E7D3A2 /* SceneDelegate.swift */; };
 		F749C0A928CE096800E7D3A2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749C0A828CE096800E7D3A2 /* SearchViewController.swift */; };
@@ -98,6 +100,8 @@
 		F743713928D314560090B8ED /* GenreDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDetailView.swift; sourceTree = "<group>"; };
 		F743713B28D315640090B8ED /* DetailGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGenre.swift; sourceTree = "<group>"; };
 		F743713D28D327900090B8ED /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
+		F743714028D37E5C0090B8ED /* DiscoveryByRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryByRatingView.swift; sourceTree = "<group>"; };
+		F743714328D424130090B8ED /* GenreFilterDropdownOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreFilterDropdownOption.swift; sourceTree = "<group>"; };
 		F749C0A128CE096800E7D3A2 /* Gametopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gametopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F749C0A428CE096800E7D3A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F749C0A628CE096800E7D3A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +228,22 @@
 			path = "Genre Detail Page";
 			sourceTree = "<group>";
 		};
+		F743713F28D37E380090B8ED /* Discovery by Rating Page */ = {
+			isa = PBXGroup;
+			children = (
+				F743714028D37E5C0090B8ED /* DiscoveryByRatingView.swift */,
+			);
+			path = "Discovery by Rating Page";
+			sourceTree = "<group>";
+		};
+		F743714228D423FB0090B8ED /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				F743714328D424130090B8ED /* GenreFilterDropdownOption.swift */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
 		F749C09828CE096800E7D3A2 = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +309,7 @@
 		F749C0D528CE097D00E7D3A2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F743713F28D37E380090B8ED /* Discovery by Rating Page */,
 				F743713828D314280090B8ED /* Genre Detail Page */,
 				F79E6A9628D1710D0064F8A7 /* Detail Page */,
 				F79E6A9528D170FE0064F8A7 /* Main Page */,
@@ -350,6 +371,7 @@
 		F7CF244228CEDE5000BECD89 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F743714228D423FB0090B8ED /* Entity */,
 				F7CF244328CEDE5800BECD89 /* Remote */,
 			);
 			path = Data;
@@ -659,6 +681,7 @@
 				F7CF246428CF4B7A00BECD89 /* ProfileViewController.swift in Sources */,
 				F7CF244528CEDE7E00BECD89 /* NetworkService.swift in Sources */,
 				F7CF247728D0389B00BECD89 /* DeveloperResponse.swift in Sources */,
+				F743714128D37E5C0090B8ED /* DiscoveryByRatingView.swift in Sources */,
 				F7CF246D28CF8E2100BECD89 /* GenreCollectionViewCell.swift in Sources */,
 				F73BAB3B28CE3C1600AEA70E /* DiscoveryView.swift in Sources */,
 				F749C0A528CE096800E7D3A2 /* AppDelegate.swift in Sources */,
@@ -673,6 +696,7 @@
 				F7CF246728CF8A6F00BECD89 /* GenreResponse.swift in Sources */,
 				F743713A28D314560090B8ED /* GenreDetailView.swift in Sources */,
 				F743713E28D327900090B8ED /* SecretKeys.swift in Sources */,
+				F743714428D424130090B8ED /* GenreFilterDropdownOption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,8 +13,32 @@ class NetworkService {
     
     // MARK: Gunakan API Key dalam akun Anda.
     let apiKey = Secrets.RawgApiKey
+    let orderByRatingAsc = "rating"
     let orderByRatingDesc = "-rating"
     let page = "1"
+    
+    func getAllDiscoveryGame(sortFromBest: Bool, completionHandler: @escaping (GameResponse?) -> ()) {
+        let param = ["key": apiKey, "ordering": sortFromBest == true ? orderByRatingDesc: orderByRatingAsc]
+        
+        AF.request(
+            "https://api.rawg.io/api/games",
+            method: .get,
+            parameters: param,
+            encoder: URLEncodedFormParameterEncoder.default
+        ).response { resp in
+            switch resp.result {
+                case .success(_):
+                    // Convert JSON String to Model
+                    if let data = resp.data {
+                        let jsonString = String(data: data, encoding: .utf8)
+                        let discoveryResponse = Mapper<GameResponse>().map(JSONObject: jsonString?.toJSON())
+                        completionHandler(discoveryResponse)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+    }
     
     func getDiscoveryGame(completionHandler: @escaping (GameResponse?) -> ()) {
         AF.request(

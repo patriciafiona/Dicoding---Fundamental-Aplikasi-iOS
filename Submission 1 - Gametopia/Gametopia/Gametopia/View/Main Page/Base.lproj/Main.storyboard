@@ -114,6 +114,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.right.circle.fill" catalog="system">
                                                     <color key="baseForegroundColor" systemColor="systemYellowColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="onDiscoveryBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uAF-Wc-x7z"/>
+                                                </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YM4-Rc-mRJ">
                                                 <rect key="frame" x="0.0" y="771" width="414" height="782"/>
