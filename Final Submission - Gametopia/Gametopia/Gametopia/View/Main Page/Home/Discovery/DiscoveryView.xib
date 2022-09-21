@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,7 +30,7 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cH-eZ-PZm">
-                            <rect key="frame" x="12" y="203" width="178" height="15"/>
+                            <rect key="frame" x="12" y="203" width="135" height="15"/>
                             <fontDescription key="fontDescription" name="EvilEmpire" family="Evil Empire" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -69,13 +70,22 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0F-Un-HDY">
+                            <rect key="frame" x="155" y="204" width="39" height="37"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="heart.circle" catalog="system">
+                                <color key="baseForegroundColor" systemColor="systemGray3Color"/>
+                            </buttonConfiguration>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.10458279639175261" green="0.10458279639175261" blue="0.10458279639175261" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstItem="EaR-TN-Kc4" firstAttribute="leading" secondItem="HHv-A7-uSa" secondAttribute="trailing" constant="3" id="4zM-vT-8Lm"/>
+                        <constraint firstItem="c0F-Un-HDY" firstAttribute="bottom" secondItem="gPt-iu-3Jq" secondAttribute="bottomMargin" id="5Ne-GP-4NY"/>
+                        <constraint firstItem="c0F-Un-HDY" firstAttribute="top" secondItem="Ffj-zs-bO2" secondAttribute="bottom" constant="5" id="82N-US-kVV"/>
                         <constraint firstItem="HHv-A7-uSa" firstAttribute="top" secondItem="1cH-eZ-PZm" secondAttribute="bottom" constant="3" id="8EH-wc-3Ie"/>
                         <constraint firstItem="1cH-eZ-PZm" firstAttribute="top" secondItem="Ffj-zs-bO2" secondAttribute="bottom" constant="4" id="B2b-72-uBw"/>
-                        <constraint firstItem="Ffj-zs-bO2" firstAttribute="trailing" secondItem="1cH-eZ-PZm" secondAttribute="trailing" id="HB7-Or-blh"/>
+                        <constraint firstItem="Ffj-zs-bO2" firstAttribute="trailing" secondItem="1cH-eZ-PZm" secondAttribute="trailing" constant="43" id="HB7-Or-blh"/>
                         <constraint firstAttribute="bottom" secondItem="1cH-eZ-PZm" secondAttribute="bottom" constant="31" id="MkE-HM-SKK"/>
                         <constraint firstAttribute="height" constant="249" id="OK6-R5-EOu"/>
                         <constraint firstItem="Ffj-zs-bO2" firstAttribute="leading" secondItem="1cH-eZ-PZm" secondAttribute="leading" id="S8q-yl-HmT"/>
@@ -86,8 +96,10 @@
                         <constraint firstAttribute="width" constant="202" id="dqZ-Vn-iQQ"/>
                         <constraint firstItem="Ffj-zs-bO2" firstAttribute="top" secondItem="BfJ-mM-xOz" secondAttribute="bottom" constant="6" id="lHo-Pw-VhP"/>
                         <constraint firstAttribute="bottom" secondItem="Ffj-zs-bO2" secondAttribute="bottom" constant="50" id="nWN-54-WpT"/>
-                        <constraint firstAttribute="trailing" secondItem="1cH-eZ-PZm" secondAttribute="trailing" constant="12" id="q2J-xQ-GhG"/>
+                        <constraint firstAttribute="trailing" secondItem="1cH-eZ-PZm" secondAttribute="trailing" constant="55" id="q2J-xQ-GhG"/>
+                        <constraint firstItem="c0F-Un-HDY" firstAttribute="trailing" secondItem="gPt-iu-3Jq" secondAttribute="trailingMargin" id="s50-Lj-ERn"/>
                         <constraint firstItem="HHv-A7-uSa" firstAttribute="leading" secondItem="gPt-iu-3Jq" secondAttribute="leading" constant="12" id="sW2-Gd-7eb"/>
+                        <constraint firstItem="c0F-Un-HDY" firstAttribute="leading" secondItem="1cH-eZ-PZm" secondAttribute="trailing" constant="8" id="vd4-na-6fD"/>
                         <constraint firstItem="EaR-TN-Kc4" firstAttribute="top" secondItem="1cH-eZ-PZm" secondAttribute="bottom" constant="4" id="vgf-BO-d5W"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
@@ -118,10 +130,14 @@
         </view>
     </objects>
     <resources>
+        <image name="heart.circle" catalog="system" width="128" height="123"/>
         <image name="placeholder_image" width="1181" height="886"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

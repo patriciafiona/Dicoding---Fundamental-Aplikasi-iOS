@@ -13,6 +13,7 @@ target 'Gametopia' do
   pod 'SkeletonView'
   pod 'SkeletonUI'
   pod 'SwiftyGif'
+  pod 'Realm', '~> 10.29'
 
   target 'GametopiaTests' do
     inherit! :search_paths

@@ -10,6 +10,8 @@
 		5454F540D95781BE118F8114 /* Pods_Gametopia_GametopiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C1AF343273248037C91296 /* Pods_Gametopia_GametopiaUITests.framework */; };
 		86121F88D5974B28B0A5AFD4 /* Pods_Gametopia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F73D433280F65DB7570D3EF /* Pods_Gametopia.framework */; };
 		D7B53E3FC5C335F7FF23CA88 /* Pods_GametopiaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6334194F1ED90EC90DBE1BBD /* Pods_GametopiaTests.framework */; };
+		F71166CF28DB129C005DD004 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71166CE28DB129C005DD004 /* ProfileModel.swift */; };
+		F71166D228DB1710005DD004 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71166D128DB1710005DD004 /* EditProfileViewController.swift */; };
 		F732C3A828D0D621001B4A3B /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F732C3A728D0D621001B4A3B /* SearchResponse.swift */; };
 		F732C3AA28D0DB93001B4A3B /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F732C3A928D0DB93001B4A3B /* SearchTableViewCell.swift */; };
 		F73BAB3928CE3C0B00AEA70E /* DiscoveryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73BAB3828CE3C0B00AEA70E /* DiscoveryView.xib */; };
@@ -90,6 +92,8 @@
 		B8C1AF343273248037C91296 /* Pods_Gametopia_GametopiaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gametopia_GametopiaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD657EAA0180A74B6D60B3E /* Pods-GametopiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GametopiaTests.debug.xcconfig"; path = "Target Support Files/Pods-GametopiaTests/Pods-GametopiaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F1B81206464A56A8E2D94BC8 /* Pods-Gametopia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gametopia.debug.xcconfig"; path = "Target Support Files/Pods-Gametopia/Pods-Gametopia.debug.xcconfig"; sourceTree = "<group>"; };
+		F71166CE28DB129C005DD004 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		F71166D128DB1710005DD004 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		F732C3A728D0D621001B4A3B /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		F732C3A928D0DB93001B4A3B /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		F73BAB3828CE3C0B00AEA70E /* DiscoveryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoveryView.xib; sourceTree = "<group>"; };
@@ -181,6 +185,22 @@
 				309CF8D6B6EAACF771470B8A /* Pods-GametopiaTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F71166C628DB087D005DD004 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				F71166CE28DB129C005DD004 /* ProfileModel.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		F71166D028DB16FD005DD004 /* Edit Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F71166D128DB1710005DD004 /* EditProfileViewController.swift */,
+			);
+			path = "Edit Profile";
 			sourceTree = "<group>";
 		};
 		F732C3A428D0CD91001B4A3B /* GIF */ = {
@@ -370,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				F743714228D423FB0090B8ED /* Entity */,
+				F71166C628DB087D005DD004 /* Local */,
 				F7CF244328CEDE5800BECD89 /* Remote */,
 			);
 			path = Data;
@@ -387,6 +408,7 @@
 		F7CF246228CF4B6300BECD89 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				F71166D028DB16FD005DD004 /* Edit Profile */,
 				F7CF246328CF4B7A00BECD89 /* ProfileViewController.swift */,
 			);
 			path = Profile;
@@ -685,6 +707,7 @@
 				F749C0F128CE253B00E7D3A2 /* Slide.swift in Sources */,
 				F743713C28D315640090B8ED /* DetailGenre.swift in Sources */,
 				F749C0A728CE096800E7D3A2 /* SceneDelegate.swift in Sources */,
+				F71166CF28DB129C005DD004 /* ProfileModel.swift in Sources */,
 				F732C3A828D0D621001B4A3B /* SearchResponse.swift in Sources */,
 				F749C0DF28CE16C600E7D3A2 /* HomeViewController.swift in Sources */,
 				F732C3AA28D0DB93001B4A3B /* SearchTableViewCell.swift in Sources */,
@@ -692,6 +715,7 @@
 				F7CF245F28CEE37A00BECD89 /* GameResponse.swift in Sources */,
 				F7CF246728CF8A6F00BECD89 /* GenreResponse.swift in Sources */,
 				F743713A28D314560090B8ED /* GenreDetailView.swift in Sources */,
+				F71166D228DB1710005DD004 /* EditProfileViewController.swift in Sources */,
 				F743714428D424130090B8ED /* GenreFilterDropdownOption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -218,7 +218,14 @@ struct RootContent: View{
                                 .foregroundColor(.yellow)
                         }
                     })
-            //.edgesIgnoringSafeArea(.all)
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "heart.circle")
+                            .foregroundColor(.gray)
+                    }
+            )
         }
         .navigationBarBackButtonHidden(true)
         .phoneOnlyStackNavigationView()

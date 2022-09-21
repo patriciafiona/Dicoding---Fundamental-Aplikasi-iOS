@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,49 +17,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5p3-Uu-EWp">
-                                <rect key="frame" x="30" y="393" width="354" height="34"/>
+                                <rect key="frame" x="30" y="397" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dicoding" translatesAutoresizingMaskIntoConstraints="NO" id="vwU-x7-pcA">
-                                <rect key="frame" x="94.5" y="84" width="225" height="225"/>
+                                <rect key="frame" x="94.5" y="88" width="225" height="225"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTk-5w-Y9t">
-                                <rect key="frame" x="128.5" y="309" width="157" height="19"/>
+                                <rect key="frame" x="128.5" y="313" width="157" height="19"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrP-tF-cLR">
-                                <rect key="frame" x="30" y="368" width="354" height="21"/>
+                                <rect key="frame" x="30" y="372" width="354" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Shk-I5-cgS">
-                                <rect key="frame" x="30" y="472" width="354" height="34"/>
+                                <rect key="frame" x="30" y="476" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MG1-n4-ttI">
-                                <rect key="frame" x="30" y="447" width="354" height="21"/>
+                                <rect key="frame" x="30" y="451" width="354" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sww-qg-9wz">
-                                <rect key="frame" x="30" y="551" width="354" height="34"/>
+                                <rect key="frame" x="30" y="555" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profession" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DM7-f8-24S">
-                                <rect key="frame" x="30" y="526" width="354" height="21"/>
+                                <rect key="frame" x="30" y="530" width="354" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vh3-eC-LSD" customClass="RoundButton" customModule="MyProfile" customModuleProvider="target">
-                                <rect key="frame" x="147" y="645" width="120" height="36"/>
+                                <rect key="frame" x="147" y="649" width="120" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="igB-8V-o7b"/>
                                 </constraints>
@@ -80,6 +81,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mTk-5w-Y9t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="08s-0c-oxq"/>
@@ -107,7 +109,6 @@
                             <constraint firstItem="mTk-5w-Y9t" firstAttribute="top" secondItem="vwU-x7-pcA" secondAttribute="bottom" id="uUN-K0-vca"/>
                             <constraint firstItem="mrP-tF-cLR" firstAttribute="top" secondItem="mTk-5w-Y9t" secondAttribute="bottom" constant="40" id="v3m-yy-j2A"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="createButton" destination="vh3-eC-LSD" id="cXS-68-LBf"/>
@@ -130,22 +131,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome," textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wom-Fz-9P3">
-                                <rect key="frame" x="30" y="359" width="354" height="72"/>
+                                <rect key="frame" x="30" y="363" width="354" height="72"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="60"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gilang Ramadhan as iOS Developer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BQ-zm-0LH">
-                                <rect key="frame" x="30" y="431" width="354" height="84"/>
+                                <rect key="frame" x="30" y="435" width="354" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dicoding" translatesAutoresizingMaskIntoConstraints="NO" id="c3e-LW-G9R">
-                                <rect key="frame" x="94.5" y="84" width="225" height="225"/>
+                                <rect key="frame" x="94.5" y="88" width="225" height="225"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Fxl-RZ-fTd">
-                                <rect key="frame" x="30" y="599" width="354" height="36"/>
+                                <rect key="frame" x="30" y="603" width="354" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPc-ul-5oA" customClass="RoundButton" customModule="MyProfile" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="167" height="36"/>
@@ -194,12 +195,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gilang@dicoding.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Or2-rd-TWG">
-                                <rect key="frame" x="30" y="515" width="354" height="24"/>
+                                <rect key="frame" x="30" y="519" width="354" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="98y-ht-EaF"/>
                         <color key="backgroundColor" red="0.1764705882" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wom-Fz-9P3" firstAttribute="top" secondItem="c3e-LW-G9R" secondAttribute="bottom" constant="50" id="0Qr-hG-zCw"/>
@@ -217,7 +219,6 @@
                             <constraint firstItem="9BQ-zm-0LH" firstAttribute="top" secondItem="wom-Fz-9P3" secondAttribute="bottom" id="lpw-XB-bYX"/>
                             <constraint firstItem="Fxl-RZ-fTd" firstAttribute="top" secondItem="Or2-rd-TWG" secondAttribute="bottom" constant="60" id="rWD-8c-BmX"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="98y-ht-EaF"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZBP-Tj-mE4"/>
                     <connections>
@@ -242,49 +243,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQz-1P-H9q">
-                                <rect key="frame" x="30" y="393" width="354" height="34"/>
+                                <rect key="frame" x="30" y="397" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfw-XO-9e6">
-                                <rect key="frame" x="30" y="368" width="354" height="21"/>
+                                <rect key="frame" x="30" y="372" width="354" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I9J-E0-LLT">
-                                <rect key="frame" x="30" y="472" width="354" height="34"/>
+                                <rect key="frame" x="30" y="476" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgf-sJ-YXe">
-                                <rect key="frame" x="30" y="447" width="354" height="21"/>
+                                <rect key="frame" x="30" y="451" width="354" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ikF-Ck-xg9">
-                                <rect key="frame" x="30" y="551" width="354" height="34"/>
+                                <rect key="frame" x="30" y="555" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profession" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efp-QM-e19">
-                                <rect key="frame" x="30" y="526" width="354" height="21"/>
+                                <rect key="frame" x="30" y="530" width="354" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dicoding" translatesAutoresizingMaskIntoConstraints="NO" id="klc-s1-yt3">
-                                <rect key="frame" x="94.5" y="84" width="225" height="225"/>
+                                <rect key="frame" x="94.5" y="88" width="225" height="225"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit your account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDW-JU-ERq">
-                                <rect key="frame" x="144" y="309" width="126" height="19"/>
+                                <rect key="frame" x="144" y="313" width="126" height="19"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="goB-CB-fJZ">
-                                <rect key="frame" x="30" y="645" width="354" height="36"/>
+                                <rect key="frame" x="30" y="649" width="354" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5TD-yi-Amb" customClass="RoundButton" customModule="MyProfile" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="167" height="36"/>
@@ -333,6 +334,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="xxr-Ln-x6C"/>
                         <color key="backgroundColor" red="0.1764705882" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="goB-CB-fJZ" firstAttribute="leading" secondItem="xxr-Ln-x6C" secondAttribute="leading" constant="30" id="1ru-Ab-8RB"/>
@@ -361,7 +363,6 @@
                             <constraint firstItem="klc-s1-yt3" firstAttribute="centerX" secondItem="bNR-SI-cng" secondAttribute="centerX" id="u4b-8C-pWz"/>
                             <constraint firstItem="xxr-Ln-x6C" firstAttribute="trailing" secondItem="ikF-Ck-xg9" secondAttribute="trailing" constant="30" id="uyK-IU-MS2"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="xxr-Ln-x6C"/>
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="AxC-jz-ZKS" id="WKY-E4-eZW"/>
@@ -376,6 +377,23 @@
             <point key="canvasLocation" x="138" y="866"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="5TD-yi-Amb">
+            <size key="intrinsicContentSize" width="43" height="36"/>
+        </designable>
+        <designable name="AxC-jz-ZKS">
+            <size key="intrinsicContentSize" width="61" height="36"/>
+        </designable>
+        <designable name="ELO-bJ-Ny6">
+            <size key="intrinsicContentSize" width="50" height="36"/>
+        </designable>
+        <designable name="LPc-ul-5oA">
+            <size key="intrinsicContentSize" width="34" height="36"/>
+        </designable>
+        <designable name="vh3-eC-LSD">
+            <size key="intrinsicContentSize" width="59" height="36"/>
+        </designable>
+    </designables>
     <resources>
         <image name="dicoding" width="225" height="225"/>
     </resources>
