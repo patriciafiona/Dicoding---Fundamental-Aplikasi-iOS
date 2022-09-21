@@ -32,7 +32,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="2456"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gametopia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyq-fg-gop">
-                                                <rect key="frame" x="24" y="58" width="222" height="28"/>
+                                                <rect key="frame" x="24" y="58" width="222" height="24"/>
                                                 <fontDescription key="fontDescription" name="VerminVibesV" family="Vermin Vibes V" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -463,7 +463,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patricia Fiona" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlZ-o0-XsH">
-                                                <rect key="frame" x="42" y="196" width="146.5" height="28"/>
+                                                <rect key="frame" x="42" y="196" width="134" height="25.5"/>
                                                 <fontDescription key="fontDescription" name="EvilEmpire" family="Evil Empire" pointSize="24"/>
                                                 <color key="textColor" systemColor="systemYellowColor"/>
                                                 <nil key="highlightedColor"/>
