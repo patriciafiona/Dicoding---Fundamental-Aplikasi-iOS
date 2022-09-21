@@ -6,3 +6,5 @@
 # Ignore info.plist
 *Info.plist
 
+# Cocoapods
+Pods/
