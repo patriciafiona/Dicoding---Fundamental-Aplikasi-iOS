@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyNotification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VD5-GE-4ui">
+                                <rect key="frame" x="102" y="405" width="187" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Schedule Notification"/>
+                                <connections>
+                                    <action selector="OnScheduleNotificationBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y9I-cM-sL9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VD5-GE-4ui" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-6" id="ZuW-oT-Uy6"/>
+                            <constraint firstItem="VD5-GE-4ui" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.479487" id="bZ5-Lv-EtD"/>
+                            <constraint firstItem="VD5-GE-4ui" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bdf-8i-Hx1"/>
+                            <constraint firstItem="VD5-GE-4ui" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.0458716" id="soT-MD-C8M"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scheduleNotificationBtn" destination="VD5-GE-4ui" id="k6a-hD-4yO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="-28"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

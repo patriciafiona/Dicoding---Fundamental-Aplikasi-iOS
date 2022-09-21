@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "CC1ADB56-5465-40D7-8AE4-BCA7F9937E84",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:UITesting.xcodeproj",
+      "identifier" : "F7CCDBB428DAB9320006D490",
+      "name" : "UITesting"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:UITesting.xcodeproj",
+        "identifier" : "F7CCDBC428DAB9370006D490",
+        "name" : "UITestingTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:UITesting.xcodeproj",
+        "identifier" : "F7CCDBCE28DAB9370006D490",
+        "name" : "UITestingUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

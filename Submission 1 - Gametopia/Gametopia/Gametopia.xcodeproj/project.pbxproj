@@ -10,7 +10,6 @@
 		5454F540D95781BE118F8114 /* Pods_Gametopia_GametopiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C1AF343273248037C91296 /* Pods_Gametopia_GametopiaUITests.framework */; };
 		86121F88D5974B28B0A5AFD4 /* Pods_Gametopia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F73D433280F65DB7570D3EF /* Pods_Gametopia.framework */; };
 		D7B53E3FC5C335F7FF23CA88 /* Pods_GametopiaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6334194F1ED90EC90DBE1BBD /* Pods_GametopiaTests.framework */; };
-		F732C3A628D0CE11001B4A3B /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = F732C3A528D0CE11001B4A3B /* loading.gif */; };
 		F732C3A828D0D621001B4A3B /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F732C3A728D0D621001B4A3B /* SearchResponse.swift */; };
 		F732C3AA28D0DB93001B4A3B /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F732C3A928D0DB93001B4A3B /* SearchTableViewCell.swift */; };
 		F73BAB3928CE3C0B00AEA70E /* DiscoveryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73BAB3828CE3C0B00AEA70E /* DiscoveryView.xib */; };
@@ -36,8 +35,6 @@
 		F749C0F328CE256900E7D3A2 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = F749C0F228CE256900E7D3A2 /* Slide.xib */; };
 		F79E6A9828D171360064F8A7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E6A9728D171360064F8A7 /* DetailView.swift */; };
 		F79E6A9A28D171BA0064F8A7 /* DetailGameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E6A9928D171BA0064F8A7 /* DetailGameResponse.swift */; };
-		F7CF243728CEDE0C00BECD89 /* EvilEmpire.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CF243628CEDE0C00BECD89 /* EvilEmpire.ttf */; };
-		F7CF243928CEDE1700BECD89 /* VerminVibes.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CF243828CEDE1700BECD89 /* VerminVibes.ttf */; };
 		F7CF244528CEDE7E00BECD89 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF244428CEDE7E00BECD89 /* NetworkService.swift */; };
 		F7CF245C28CEE19300BECD89 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F7CF245F28CEE37A00BECD89 /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF245E28CEE37A00BECD89 /* GameResponse.swift */; };
@@ -48,6 +45,9 @@
 		F7CF247728D0389B00BECD89 /* DeveloperResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF247628D0389B00BECD89 /* DeveloperResponse.swift */; };
 		F7CF247B28D0455C00BECD89 /* DeveloperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF247928D0455C00BECD89 /* DeveloperTableViewCell.swift */; };
 		F7CF247C28D0455C00BECD89 /* DeveloperTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CF247A28D0455C00BECD89 /* DeveloperTableViewCell.xib */; };
+		F7E857FF28D4740E006ADDD7 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = F7E857FE28D4740D006ADDD7 /* loading.gif */; };
+		F7E8580228D4745E006ADDD7 /* EvilEmpire.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7E8580028D4745E006ADDD7 /* EvilEmpire.ttf */; };
+		F7E8580328D4745E006ADDD7 /* VerminVibes.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7E8580128D4745E006ADDD7 /* VerminVibes.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +91,6 @@
 		B8C1AF343273248037C91296 /* Pods_Gametopia_GametopiaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gametopia_GametopiaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD657EAA0180A74B6D60B3E /* Pods-GametopiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GametopiaTests.debug.xcconfig"; path = "Target Support Files/Pods-GametopiaTests/Pods-GametopiaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F1B81206464A56A8E2D94BC8 /* Pods-Gametopia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gametopia.debug.xcconfig"; path = "Target Support Files/Pods-Gametopia/Pods-Gametopia.debug.xcconfig"; sourceTree = "<group>"; };
-		F732C3A528D0CE11001B4A3B /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = loading.gif; path = ../../../assets/loading.gif; sourceTree = "<group>"; };
 		F732C3A728D0D621001B4A3B /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		F732C3A928D0DB93001B4A3B /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		F73BAB3828CE3C0B00AEA70E /* DiscoveryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoveryView.xib; sourceTree = "<group>"; };
@@ -121,8 +120,6 @@
 		F749C0F228CE256900E7D3A2 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		F79E6A9728D171360064F8A7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		F79E6A9928D171BA0064F8A7 /* DetailGameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameResponse.swift; sourceTree = "<group>"; };
-		F7CF243628CEDE0C00BECD89 /* EvilEmpire.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = EvilEmpire.ttf; path = "../../../assets/fonts/evil-empire-font/EvilEmpire.ttf"; sourceTree = "<group>"; };
-		F7CF243828CEDE1700BECD89 /* VerminVibes.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = VerminVibes.ttf; path = "../../../assets/fonts/vermin-vibes-v-font/VerminVibes.ttf"; sourceTree = "<group>"; };
 		F7CF244428CEDE7E00BECD89 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F7CF245E28CEE37A00BECD89 /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
 		F7CF246328CF4B7A00BECD89 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +129,9 @@
 		F7CF247628D0389B00BECD89 /* DeveloperResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperResponse.swift; sourceTree = "<group>"; };
 		F7CF247928D0455C00BECD89 /* DeveloperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperTableViewCell.swift; sourceTree = "<group>"; };
 		F7CF247A28D0455C00BECD89 /* DeveloperTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeveloperTableViewCell.xib; sourceTree = "<group>"; };
+		F7E857FE28D4740D006ADDD7 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		F7E8580028D4745E006ADDD7 /* EvilEmpire.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilEmpire.ttf; sourceTree = "<group>"; };
+		F7E8580128D4745E006ADDD7 /* VerminVibes.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VerminVibes.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +188,7 @@
 		F732C3A428D0CD91001B4A3B /* GIF */ = {
 			isa = PBXGroup;
 			children = (
-				F732C3A528D0CE11001B4A3B /* loading.gif */,
+				F7E857FE28D4740D006ADDD7 /* loading.gif */,
 			);
 			path = GIF;
 			sourceTree = "<group>";
@@ -362,8 +362,8 @@
 		F7CF243528CEDDFE00BECD89 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				F7CF243828CEDE1700BECD89 /* VerminVibes.ttf */,
-				F7CF243628CEDE0C00BECD89 /* EvilEmpire.ttf */,
+				F7E8580028D4745E006ADDD7 /* EvilEmpire.ttf */,
+				F7E8580128D4745E006ADDD7 /* VerminVibes.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -537,14 +537,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F749C0B128CE096C00E7D3A2 /* LaunchScreen.storyboard in Resources */,
+				F7E8580328D4745E006ADDD7 /* VerminVibes.ttf in Resources */,
+				F7E8580228D4745E006ADDD7 /* EvilEmpire.ttf in Resources */,
 				F749C0AE28CE096C00E7D3A2 /* assets.xcassets in Resources */,
 				F749C0AC28CE096800E7D3A2 /* Main.storyboard in Resources */,
 				F7CF247C28D0455C00BECD89 /* DeveloperTableViewCell.xib in Resources */,
 				F749C0F328CE256900E7D3A2 /* Slide.xib in Resources */,
 				F7CF246E28CF8E2100BECD89 /* GenreCollectionViewCell.xib in Resources */,
-				F7CF243928CEDE1700BECD89 /* VerminVibes.ttf in Resources */,
-				F7CF243728CEDE0C00BECD89 /* EvilEmpire.ttf in Resources */,
-				F732C3A628D0CE11001B4A3B /* loading.gif in Resources */,
+				F7E857FF28D4740E006ADDD7 /* loading.gif in Resources */,
 				F73BAB3928CE3C0B00AEA70E /* DiscoveryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

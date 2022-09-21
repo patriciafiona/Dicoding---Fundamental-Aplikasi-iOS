@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="EvilEmpire.ttf">
+            <string>EvilEmpire</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Slide" customModule="Gametopia" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="229"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cSy-Sd-VHL">
+                    <rect key="frame" x="0.0" y="-13" width="414" height="242"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dark_bottom_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="JvP-5Q-0vg">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="229"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNB-vA-njb">
+                    <rect key="frame" x="20" y="189" width="374" height="29"/>
+                    <fontDescription key="fontDescription" name="EvilEmpire" family="Evil Empire" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="cNB-vA-njb" secondAttribute="bottom" constant="11" id="9D6-Ha-vmP"/>
+                <constraint firstItem="cSy-Sd-VHL" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="B72-Mn-6YM"/>
+                <constraint firstItem="JvP-5Q-0vg" firstAttribute="leading" secondItem="cSy-Sd-VHL" secondAttribute="leading" id="FZu-9R-gRg"/>
+                <constraint firstItem="cNB-vA-njb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="Kjd-lQ-SBT"/>
+                <constraint firstItem="JvP-5Q-0vg" firstAttribute="bottom" secondItem="cSy-Sd-VHL" secondAttribute="bottom" id="Lk0-Hx-tgo"/>
+                <constraint firstItem="JvP-5Q-0vg" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="MgI-tp-bfZ"/>
+                <constraint firstItem="cNB-vA-njb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="145" id="XKe-eh-eA7"/>
+                <constraint firstItem="cNB-vA-njb" firstAttribute="centerX" secondItem="cSy-Sd-VHL" secondAttribute="centerX" id="Xl7-YA-1l4"/>
+                <constraint firstItem="JvP-5Q-0vg" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" multiplier="1.23784" id="aYI-pW-jOB"/>
+                <constraint firstItem="cNB-vA-njb" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.903382" id="b5S-bC-hQD"/>
+                <constraint firstItem="cSy-Sd-VHL" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" multiplier="1.30811" id="gBP-L2-Ata"/>
+                <constraint firstItem="cSy-Sd-VHL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ih0-ua-Ytg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cNB-vA-njb" secondAttribute="trailing" constant="20" id="lHH-5h-FDR"/>
+                <constraint firstItem="cSy-Sd-VHL" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="qZs-n8-QtN"/>
+                <constraint firstItem="cNB-vA-njb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="qZt-z4-Nj5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="cSy-Sd-VHL" id="25E-7E-674"/>
+                <outlet property="title" destination="cNB-vA-njb" id="418-Tc-JHr"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="-146.31696428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dark_bottom_transparent" width="1281" height="643"/>
+    </resources>
+</document>

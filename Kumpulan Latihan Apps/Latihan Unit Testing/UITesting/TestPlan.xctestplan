@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "C923AD0A-DAB3-4FC9-A824-BE4C01390D1B",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:UITesting.xcodeproj",
+        "identifier" : "F7CCDBCE28DAB9370006D490",
+        "name" : "UITestingUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
