@@ -1,4 +1,8 @@
-#Ignore API Key Files
+#Ignore API Key & Zip files Files in Submission 1
 
 **/SecretKeys.swift
 **/Gametopia.zip
+
+# Ignore info.plist
+**/Final Submission - Gametopia/Gametopia/FileSystem/Info.plist
+
