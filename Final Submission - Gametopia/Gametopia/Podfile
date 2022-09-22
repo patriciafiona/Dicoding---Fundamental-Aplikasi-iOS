@@ -13,7 +13,9 @@ target 'Gametopia' do
   pod 'SkeletonView'
   pod 'SkeletonUI'
   pod 'SwiftyGif'
-  pod 'Realm', '~> 10.29'
+  
+  pod 'Realm', '=10.29.0'
+  pod 'RealmSwift', '=10.29.0'
 
   target 'GametopiaTests' do
     inherit! :search_paths

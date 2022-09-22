@@ -8,6 +8,7 @@
 import SwiftUI
 import Kingfisher
 import SkeletonUI
+import RealmSwift
 
 struct DetailView: View {
     @State private var id: Int
@@ -31,6 +32,10 @@ struct RootContent: View{
     @Environment(\.presentationMode) var presentationMode
     @State var id: Int
     @State var game: DetailGameResponse?
+    
+    @State var isFavorite: Bool = false
+    
+    private let realm = try! Realm()
     
     var body: some View{
         NavigationView {
@@ -210,21 +215,50 @@ struct RootContent: View{
             .navigationBarItems(leading:
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        HStack {
-                            Image(systemName: "arrow.left.circle")
-                                .foregroundColor(.yellow)
-                            Text("Go Back")
-                                .foregroundColor(.yellow)
-                        }
-                    })
+                }) {
+                    HStack {
+                        Image(systemName: "arrow.left.circle")
+                            .foregroundColor(.yellow)
+                        Text("Go Back")
+                            .foregroundColor(.yellow)
+                    }
+                })
             .navigationBarItems(trailing:
                 Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Image(systemName: "heart.circle")
-                            .foregroundColor(.gray)
+                    //Add or remove from database
+                    let fav = Favorites()
+                    fav._id = String(game?.id ?? 0)
+                    fav.name = (game?.name)!
+                    
+                if realm.object(ofType: Favorites.self, forPrimaryKey: String((game?.id)!)) != nil{
+                        //remove
+                        try! realm.write {
+                            let item = realm.objects(Favorites.self).where {
+                                $0._id == String(game?.id ?? 0)
+                            }
+                            realm.delete(item)
+                            
+                            isFavorite = false
+                        }
+                    }else{
+                        //add
+                        try! realm.write {
+                            realm.add(fav)
+                            isFavorite = true
+                        }
                     }
+                }) {
+                    let favorites = realm.objects(Favorites.self)
+                    let checkIsFav = favorites.where {
+                        $0._id == "\(game?.id ?? 0)"
+                    }
+                    
+                    Image(systemName: isFavorite == true ? "heart.circle.fill" : "heart.circle")
+                        .foregroundColor(isFavorite == true ?.red : .gray)
+                }
+                .skeleton(with: game == nil)
+                .shape(type: .circle)
+                .appearance(type: .solid(color: .yellow, background: .black))
             )
         }
         .navigationBarBackButtonHidden(true)
@@ -236,6 +270,8 @@ struct RootContent: View{
                 let res = result
                 if let gameDetail = res{
                     game = gameDetail
+                    
+                    isFavorite = realm.object(ofType: Favorites.self, forPrimaryKey: String((game?.id)!)) != nil
                 }
             }
         }

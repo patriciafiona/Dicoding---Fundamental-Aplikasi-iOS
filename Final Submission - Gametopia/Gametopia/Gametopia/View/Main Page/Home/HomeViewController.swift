@@ -39,8 +39,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
     var shouldAnimateGenre = true
     var shouldAnimateDiscovery = true
     
-    let gradient = SkeletonGradient(baseColor: UIColor.darkClouds)
-    let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftRight)
+    private let gradient = SkeletonGradient(baseColor: UIColor.darkClouds)
+    private let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftRight)
     
     override func viewDidLoad() {
         super.viewDidLoad()

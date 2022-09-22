@@ -76,6 +76,11 @@
                             <buttonConfiguration key="configuration" style="plain" image="heart.circle" catalog="system">
                                 <color key="baseForegroundColor" systemColor="systemGray3Color"/>
                             </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isUserInteractionDisabledWhenSkeletonIsActive" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isHiddenWhenSkeletonIsActive" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.10458279639175261" green="0.10458279639175261" blue="0.10458279639175261" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

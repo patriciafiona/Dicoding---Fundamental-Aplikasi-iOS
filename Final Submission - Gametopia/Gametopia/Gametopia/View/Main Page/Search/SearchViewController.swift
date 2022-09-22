@@ -98,7 +98,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UISearchBar
         
         cell.name.text = data.name
         cell.score.text = "| Score: \(data.score ?? "0")"
-        cell.rating.text = "\(data.rating ?? 0.0)"
+        cell.rating.text = "\(String(format: "%.2f", data.rating ?? 0.0))"
         if(data.released !=  nil){
             cell.gameDescription.text = "Release on \(dateFormat(dateTxt: data.released!))"
         }else{
