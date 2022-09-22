@@ -8,6 +8,7 @@
 import UIKit
 import SwiftyGif
 import SwiftUI
+import RealmSwift
 
 class SearchViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate {
     
@@ -21,9 +22,17 @@ class SearchViewController: UIViewController, UITableViewDataSource, UISearchBar
     
     var searchResults: [SearchResult] = []
     
+    private let realm = try! Realm()
+    private var myFavGame: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        initView()
+        searchTableView.reloadData()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -44,6 +53,15 @@ class SearchViewController: UIViewController, UITableViewDataSource, UISearchBar
 
     private func initView(){
         isLoadingNow(status: false)
+        
+        myFavGame.removeAll()
+        let queue = DispatchQueue(label: "com.patriciafiona.gametopia")
+        queue.sync {
+            let favorites = realm.objects(Favorites.self)
+            for i in 0..<favorites.count{
+                myFavGame.append(favorites[i]._id)
+            }
+        }
         
         //prepare loading GIF
         do {
@@ -118,11 +136,67 @@ class SearchViewController: UIViewController, UITableViewDataSource, UISearchBar
         }
         viewRounded(view: cell.gameImage, radius: 10)
         
+        setFavButtonView(cell.favoriteBtn, gameId: data.id ?? 0)
+        let favGesture = FavoriteGameTapGesture(target: self, action: #selector(self.setFavoriteGame))
+        favGesture.id = (data.id)!
+        favGesture.gameName = (data.name)!
+        favGesture.btn = cell.favoriteBtn
+        cell.favoriteBtn.addGestureRecognizer(favGesture)
+        
         let gesture = GameTapGesture(target: self, action: #selector(self.goToDetailPage))
         cell.addGestureRecognizer(gesture)
         gesture.id = (data.id)!
         
         return cell
+    }
+    
+    private func setFavButtonView(_ favoriteBtn: UIButton, gameId: Int){
+        if myFavGame.contains(String(gameId)){
+            favoriteBtn.setImage(
+                UIImage(systemName: "heart.circle.fill"),
+                for: .normal
+            )
+            favoriteBtn.tintColor = UIColor.red
+        }else{
+            favoriteBtn.setImage(
+                UIImage(systemName: "heart.circle"),
+                for: .normal
+            )
+            favoriteBtn.tintColor = UIColor.gray
+        }
+    }
+    
+    @objc private func setFavoriteGame(sender : FavoriteGameTapGesture) {
+        if realm.object(ofType: Favorites.self, forPrimaryKey: String(sender.id)) == nil{
+            //add
+            let fav = Favorites()
+            fav._id = String(sender.id)
+            fav.name = String(sender.gameName)
+            
+            try! realm.write {
+                realm.add(fav)
+                myFavGame.append(String(sender.id))
+            }
+        }else{
+            //remove
+            try! realm.write {
+                let item = realm.objects(Favorites.self).where {
+                    $0._id == String(sender.id)
+                }
+                realm.delete(item)
+                
+                //update the list of id
+                myFavGame.removeAll()
+                let queue = DispatchQueue(label: "com.patriciafiona.gametopia")
+                queue.sync {
+                    let favorites = realm.objects(Favorites.self)
+                    for i in 0..<favorites.count{
+                        myFavGame.append(favorites[i]._id)
+                    }
+                }
+            }
+        }
+        setFavButtonView(sender.btn, gameId: sender.id)
     }
     
     @objc private func goToDetailPage(sender : GameTapGesture) {

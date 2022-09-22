@@ -72,10 +72,9 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0F-Un-HDY">
                             <rect key="frame" x="155" y="204" width="39" height="37"/>
+                            <color key="tintColor" systemColor="systemGrayColor"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="heart.circle" catalog="system">
-                                <color key="baseForegroundColor" systemColor="systemGray3Color"/>
-                            </buttonConfiguration>
+                            <buttonConfiguration key="configuration" style="plain" image="heart.circle" catalog="system"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isUserInteractionDisabledWhenSkeletonIsActive" value="YES"/>
@@ -125,7 +124,8 @@
                 <userDefinedRuntimeAttribute type="boolean" keyPath="isUserInteractionDisabledWhenSkeletonIsActive" value="YES"/>
             </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="container" destination="gPt-iu-3Jq" id="9ot-Xu-4TA"/>
+                <outlet property="container" destination="gPt-iu-3Jq" id="9ZS-j6-dha"/>
+                <outlet property="favoriteBtn" destination="c0F-Un-HDY" id="hOK-0r-aOT"/>
                 <outlet property="posterImage" destination="BfJ-mM-xOz" id="gln-2d-05K"/>
                 <outlet property="rating" destination="EaR-TN-Kc4" id="I6e-BT-XW9"/>
                 <outlet property="releaseDate" destination="Ffj-zs-bO2" id="oxk-NM-K8v"/>
@@ -141,8 +141,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -8,6 +8,7 @@
 import SwiftUI
 import Kingfisher
 import SkeletonView
+import RealmSwift
 
 class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource,
                             UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -42,8 +43,15 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
     private let gradient = SkeletonGradient(baseColor: UIColor.darkClouds)
     private let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftRight)
     
+    private let realm = try! Realm()
+    private var myFavGame: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        initView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         initView()
     }
     
@@ -67,6 +75,15 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
     
     private func initView(){
         imageCircle(imageView: userProfilePicture)
+        
+        myFavGame.removeAll()
+        let queue = DispatchQueue(label: "com.patriciafiona.gametopia")
+        queue.sync {
+            let favorites = realm.objects(Favorites.self)
+            for i in 0..<favorites.count{
+                myFavGame.append(favorites[i]._id)
+            }
+        }
         
         sliderScrollView.delegate = self
         
@@ -172,6 +189,14 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
                             ]
                         )
                     }
+                    
+                    setFavButtonView(viewItem.favoriteBtn, gameId: data?.id ?? 0)
+                    
+                    let favGesture = FavoriteGameTapGesture(target: self, action: #selector(self.setFavoriteGame))
+                    favGesture.id = (data?.id)!
+                    favGesture.gameName = (data?.name)!
+                    favGesture.btn = viewItem.favoriteBtn
+                    viewItem.favoriteBtn.addGestureRecognizer(favGesture)
     
                     viewItem.frame = CGRect(
                         x: view.frame.width * CGFloat(i),
@@ -189,6 +214,55 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
                 }
             }
         }
+    }
+    
+    private func setFavButtonView(_ favoriteBtn: UIButton, gameId: Int){
+        if myFavGame.contains(String(gameId)){
+            favoriteBtn.setImage(
+                UIImage(systemName: "heart.circle.fill"),
+                for: .normal
+            )
+            favoriteBtn.tintColor = UIColor.red
+        }else{
+            favoriteBtn.setImage(
+                UIImage(systemName: "heart.circle"),
+                for: .normal
+            )
+            favoriteBtn.tintColor = UIColor.gray
+        }
+    }
+    
+    @objc private func setFavoriteGame(sender : FavoriteGameTapGesture) {
+        if realm.object(ofType: Favorites.self, forPrimaryKey: String(sender.id)) == nil{
+            //add
+            let fav = Favorites()
+            fav._id = String(sender.id)
+            fav.name = String(sender.gameName)
+            
+            try! realm.write {
+                realm.add(fav)
+                myFavGame.append(String(sender.id))
+            }
+        }else{
+            //remove
+            try! realm.write {
+                let item = realm.objects(Favorites.self).where {
+                    $0._id == String(sender.id)
+                }
+                realm.delete(item)
+                
+                //update the list of id
+                myFavGame.removeAll()
+                let queue = DispatchQueue(label: "com.patriciafiona.gametopia")
+                queue.sync {
+                    let favorites = realm.objects(Favorites.self)
+                    for i in 0..<favorites.count{
+                        myFavGame.append(favorites[i]._id)
+                    }
+                }
+            }
+        }
+        setFavButtonView(sender.btn, gameId: sender.id)
     }
     
     @objc private func goToDetailPage(sender : GameTapGesture) {
@@ -409,6 +483,12 @@ extension HomeViewController: UITableViewDataSource {
 
 class GameTapGesture: UITapGestureRecognizer {
     var id = Int()
+}
+
+class FavoriteGameTapGesture: UITapGestureRecognizer {
+    var id = Int()
+    var gameName = String()
+    var btn = UIButton()
 }
 
 extension HomeViewController: SkeletonTableViewDataSource{

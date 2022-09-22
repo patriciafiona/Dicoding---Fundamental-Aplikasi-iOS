@@ -13,6 +13,7 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var gameDescription: UILabel!
     @IBOutlet weak var rating: UILabel!
+    @IBOutlet weak var favoriteBtn: UIButton!
     @IBOutlet weak var score: UILabel!
     
     
