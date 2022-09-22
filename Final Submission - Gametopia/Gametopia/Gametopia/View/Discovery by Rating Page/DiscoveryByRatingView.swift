@@ -8,6 +8,7 @@
 import SwiftUI
 import Kingfisher
 import SkeletonUI
+import RealmSwift
 
 struct templateSkeleton: Identifiable {
     let id = UUID()
@@ -61,6 +62,9 @@ struct RootDiscoverList: View{
     
     private let templateSkeletonView = [templateSkeleton(), templateSkeleton(), templateSkeleton(), templateSkeleton(), templateSkeleton(), templateSkeleton(), templateSkeleton(), templateSkeleton(), templateSkeleton(), templateSkeleton(), templateSkeleton(), templateSkeleton()]
     
+    @State private var myFavGame: [String] = []
+    private let realm = try! Realm()
+    
     var body: some View {
         NavigationView {
             ScrollView{
@@ -112,6 +116,15 @@ struct RootDiscoverList: View{
                                         }
                                     }
                                     
+                                    myFavGame.removeAll()
+                                    let queue = DispatchQueue(label: "com.patriciafiona.gametopia")
+                                    queue.sync {
+                                        let favorites = realm.objects(Favorites.self)
+                                        for i in 0..<favorites.count{
+                                            myFavGame.append(favorites[i]._id)
+                                        }
+                                    }
+                                    
                                     self.onOptionSelected?(option)
                                 })
                             }
@@ -130,7 +143,7 @@ struct RootDiscoverList: View{
                                 NavigationLink {
                                     DetailView(id: game.id!)
                                 } label: {
-                                    GameItem(game: game)
+                                    GameItem(game: game, myFavGame: self.myFavGame)
                                 }
                             }
                         }
@@ -139,7 +152,7 @@ struct RootDiscoverList: View{
                     }else{
                         if #available(iOS 16.0, *) {
                             SkeletonList(with: templateSkeletonView, quantity: templateSkeletonView.count) { loading, user in
-                                GameItem(game: nil)
+                                GameItem(game: nil, myFavGame: [])
                                     .skeleton(with: loading)
                                     .shape(type: .rectangle)
                                     .appearance(type: .solid(color: .yellow, background: .black))
@@ -150,7 +163,7 @@ struct RootDiscoverList: View{
                             .zIndex(-1)
                         }else{
                             SkeletonList(with: templateSkeletonView, quantity: templateSkeletonView.count) { loading, user in
-                                GameItem(game: nil)
+                                GameItem(game: nil, myFavGame: [])
                                     .skeleton(with: loading)
                                     .shape(type: .rectangle)
                                     .appearance(type: .solid(color: .yellow, background: .black))
@@ -237,6 +250,9 @@ struct DropdownRow: View {
 
 struct GameItem: View{
     @State var game: Result?
+    @State var myFavGame: [String] = []
+    
+    private let realm = try! Realm()
     
     var body: some View {
         HStack{
@@ -256,58 +272,110 @@ struct GameItem: View{
                 .shape(type: .rectangle)
                 .appearance(type: .solid(color: .yellow, background: .black))
             
-            VStack(alignment: .leading){
-                Text(game?.name)
-                    .lineLimit(1)
-                    .font(Font.custom("EvilEmpire", size: 18, relativeTo: .title))
-                    .foregroundColor(.yellow)
-                    .skeleton(with: game == nil)
-                    .shape(type: .rectangle)
-                    .appearance(type: .solid(color: .yellow, background: .black))
-                    .skeleton(with: game == nil)
-                    .shape(type: .rectangle)
-                    .appearance(type: .solid(color: .yellow, background: .black))
-                
-                if let releaseDate = game?.released {
-                    Text("Release on \(dateFormat(dateTxt:releaseDate))")
-                        .foregroundColor(Color(red: 241 / 255, green: 242 / 255, blue: 246 / 255))
-                        .font(.system(size: 12))
-                        .skeleton(with: game == nil)
-                        .shape(type: .rectangle)
-                        .appearance(type: .solid(color: .yellow, background: .black))
-                }else{
-                    Text("Unknown release date")
-                        .foregroundColor(Color(red: 241 / 255, green: 242 / 255, blue: 246 / 255))
-                        .font(.system(size: 12))
-                        .skeleton(with: game == nil)
-                        .shape(type: .rectangle)
-                        .appearance(type: .solid(color: .yellow, background: .black))
-                }
-                
-                HStack{
-                    Label("", systemImage: "star.fill")
-                        .labelStyle(.iconOnly)
+            HStack{
+                VStack(alignment: .leading){
+                    Text(game?.name)
+                        .lineLimit(1)
+                        .font(Font.custom("EvilEmpire", size: 18, relativeTo: .title))
                         .foregroundColor(.yellow)
-                        .font(.system(size: 12))
+                        .skeleton(with: game == nil)
+                        .shape(type: .rectangle)
+                        .appearance(type: .solid(color: .yellow, background: .black))
                         .skeleton(with: game == nil)
                         .shape(type: .rectangle)
                         .appearance(type: .solid(color: .yellow, background: .black))
                     
-                    Text("\(game?.rating ?? 0.0, specifier: "%.2f")")
-                        .foregroundColor(.white)
-                        .font(Font.custom("EvilEmpire", size: 14, relativeTo: .title))
-                        .fontWeight(.bold)
-                        .skeleton(with: game == nil)
-                        .shape(type: .rectangle)
-                        .appearance(type: .solid(color: .yellow, background: .black))
+                    if let releaseDate = game?.released {
+                        Text("Release on \(dateFormat(dateTxt:releaseDate))")
+                            .foregroundColor(Color(red: 241 / 255, green: 242 / 255, blue: 246 / 255))
+                            .font(.system(size: 12))
+                            .skeleton(with: game == nil)
+                            .shape(type: .rectangle)
+                            .appearance(type: .solid(color: .yellow, background: .black))
+                    }else{
+                        Text("Unknown release date")
+                            .foregroundColor(Color(red: 241 / 255, green: 242 / 255, blue: 246 / 255))
+                            .font(.system(size: 12))
+                            .skeleton(with: game == nil)
+                            .shape(type: .rectangle)
+                            .appearance(type: .solid(color: .yellow, background: .black))
+                    }
                     
-                    Text("| Total Review: \(game?.reviewsCount ?? 0)")
-                        .foregroundColor(.white)
-                        .font(Font.custom("EvilEmpire", size: 14, relativeTo: .title))
-                        .skeleton(with: game == nil)
-                        .shape(type: .rectangle)
-                        .appearance(type: .solid(color: .yellow, background: .black))
+                    HStack{
+                        Label("", systemImage: "star.fill")
+                            .labelStyle(.iconOnly)
+                            .foregroundColor(.yellow)
+                            .font(.system(size: 12))
+                            .skeleton(with: game == nil)
+                            .shape(type: .rectangle)
+                            .appearance(type: .solid(color: .yellow, background: .black))
+                        
+                        Text("\(game?.rating ?? 0.0, specifier: "%.2f")")
+                            .foregroundColor(.white)
+                            .font(Font.custom("EvilEmpire", size: 14, relativeTo: .title))
+                            .fontWeight(.bold)
+                            .skeleton(with: game == nil)
+                            .shape(type: .rectangle)
+                            .appearance(type: .solid(color: .yellow, background: .black))
+                        
+                        Text("| Total Review: \(game?.reviewsCount ?? 0)")
+                            .foregroundColor(.white)
+                            .font(Font.custom("EvilEmpire", size: 14, relativeTo: .title))
+                            .skeleton(with: game == nil)
+                            .shape(type: .rectangle)
+                            .appearance(type: .solid(color: .yellow, background: .black))
+                    }
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Button(action: {
+                    //Add or remove fav
+                    let fav = Favorites()
+                    fav._id = String(game?.id ?? 0)
+                    fav.name = (game?.name)!
+                    
+                    if realm.object(ofType: Favorites.self, forPrimaryKey: String((game?.id)!)) != nil{
+                        //remove
+                        try! realm.write {
+                            let item = realm.objects(Favorites.self).where {
+                                $0._id == String(game?.id ?? 0)
+                            }
+                            realm.delete(item)
+                            
+                            //update the list of id
+                            myFavGame.removeAll()
+                            let queue = DispatchQueue(label: "com.patriciafiona.gametopia")
+                            queue.sync {
+                                let favorites = realm.objects(Favorites.self)
+                                for i in 0..<favorites.count{
+                                    myFavGame.append(favorites[i]._id)
+                                }
+                            }
+                        }
+                    }else{
+                        //add
+                        try! realm.write {
+                            realm.add(fav)
+                            myFavGame.append(String((game?.id)!))
+                        }
+                    }
+                }) {
+                    if myFavGame.contains(String(game?.id ?? 0)){
+                        Image(systemName: "heart.circle.fill")
+                            .foregroundColor(.red)
+                            .skeleton(with: game == nil)
+                            .shape(type: .circle)
+                            .appearance(type: .solid(color: .yellow, background: .black))
+                    }else{
+                        Image(systemName: "heart.circle")
+                            .foregroundColor(.gray)
+                            .skeleton(with: game == nil)
+                            .shape(type: .circle)
+                            .appearance(type: .solid(color: .yellow, background: .black))
+                    }
+                }
+                .frame(width: 50)
+                
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 10)

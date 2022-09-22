@@ -13,6 +13,7 @@ import RealmSwift
 class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource,
                             UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
+    @IBOutlet weak var userProfile: UIImageView!
     @IBOutlet weak var sliderScrollView: UIScrollView!
     @IBOutlet weak var sliderControll: UIPageControl!
     
@@ -74,6 +75,15 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UICollectionVi
     }
     
     private func initView(){
+        //set image based on database
+        if let profile = realm.object(ofType: UserProfile.self, forPrimaryKey: ProfileModel.email) {
+            DispatchQueue.main.async {
+                self.userProfile.contentMode = .scaleToFill
+                self.userProfile.image = UIImage(data: profile.photo)
+                self.userProfile.setNeedsDisplay()
+            }
+        }
+        
         imageCircle(imageView: userProfilePicture)
         
         myFavGame.removeAll()

@@ -17,6 +17,7 @@
 		F7337E0628DC025A0008D2FC /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7337E0528DC025A0008D2FC /* Favorites.swift */; };
 		F7337E0928DC0D890008D2FC /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7337E0828DC0D890008D2FC /* FavoriteViewController.swift */; };
 		F7337E0B28DC48020008D2FC /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7337E0A28DC48020008D2FC /* FavoriteTableViewCell.swift */; };
+		F7337E0D28DCAAF50008D2FC /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7337E0C28DCAAF50008D2FC /* UserProfile.swift */; };
 		F73BAB3928CE3C0B00AEA70E /* DiscoveryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73BAB3828CE3C0B00AEA70E /* DiscoveryView.xib */; };
 		F73BAB3B28CE3C1600AEA70E /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BAB3A28CE3C1600AEA70E /* DiscoveryView.swift */; };
 		F743713728D2353F0090B8ED /* PlatformItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743713628D2353F0090B8ED /* PlatformItem.swift */; };
@@ -102,6 +103,7 @@
 		F7337E0528DC025A0008D2FC /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		F7337E0828DC0D890008D2FC /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		F7337E0A28DC48020008D2FC /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		F7337E0C28DCAAF50008D2FC /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		F73BAB3828CE3C0B00AEA70E /* DiscoveryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoveryView.xib; sourceTree = "<group>"; };
 		F73BAB3A28CE3C1600AEA70E /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
 		F743713628D2353F0090B8ED /* PlatformItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformItem.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				F7337E0528DC025A0008D2FC /* Favorites.swift */,
+				F7337E0C28DCAAF50008D2FC /* UserProfile.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -725,6 +728,7 @@
 				F749C0A928CE096800E7D3A2 /* SearchViewController.swift in Sources */,
 				F7CF246428CF4B7A00BECD89 /* ProfileViewController.swift in Sources */,
 				F7CF244528CEDE7E00BECD89 /* NetworkService.swift in Sources */,
+				F7337E0D28DCAAF50008D2FC /* UserProfile.swift in Sources */,
 				F7CF247728D0389B00BECD89 /* DeveloperResponse.swift in Sources */,
 				F743714128D37E5C0090B8ED /* DiscoveryByRatingView.swift in Sources */,
 				F7CF246D28CF8E2100BECD89 /* GenreCollectionViewCell.swift in Sources */,
