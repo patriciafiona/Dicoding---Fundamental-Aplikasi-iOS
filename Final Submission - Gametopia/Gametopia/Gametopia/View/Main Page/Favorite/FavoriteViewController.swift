@@ -58,7 +58,6 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UISearchB
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let favorites = realm.objects(Favorites.self).sorted(byKeyPath: "name", ascending: true)
         return totalFavoriteSkeleton
     }
     
