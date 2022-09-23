@@ -100,6 +100,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UISearchBar
     private func isNotFoundResults(status: Bool){
         notFoundImage.isHidden = !status
         notFoundText.isHidden = !status
+        searchTableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

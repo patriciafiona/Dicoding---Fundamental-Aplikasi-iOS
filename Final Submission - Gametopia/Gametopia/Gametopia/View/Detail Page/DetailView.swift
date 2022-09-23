@@ -247,12 +247,7 @@ struct RootContent: View{
                             isFavorite = true
                         }
                     }
-                }) {
-                    let favorites = realm.objects(Favorites.self)
-                    let checkIsFav = favorites.where {
-                        $0._id == "\(game?.id ?? 0)"
-                    }
-                    
+                }) {                    
                     Image(systemName: isFavorite == true ? "heart.circle.fill" : "heart.circle")
                         .foregroundColor(isFavorite == true ?.red : .gray)
                 }
