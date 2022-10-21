@@ -35,4 +35,9 @@ The list of the projects:
 | Final Submission | Hasil aplikasi untuk Final Submission - Game Katalog - Gametopia | [Link](https://github.com/patriciafiona/Dicoding---Fundamental-Aplikasi-iOS/tree/main/Final%20Submission%20-%20Gametopia) | 
 
 ## Results for App 
-[NOT AVAILABLE RIGHT NOW]
+| Action      | Preview  |
+| :-: | :-: |
+| Splash Screen, Home Screen, Discover, and Detail Page | <img src="https://user-images.githubusercontent.com/32255348/197202648-7a03d0cd-c0e2-4bc4-935c-84429df18ad8.gif" width="400"/> |
+| Search Screen & Favorite Feature | <img src="https://user-images.githubusercontent.com/32255348/196975777-63898d9f-d639-4c76-9dcf-087fd17e3c18.gif" width="400"/> |
+| Edit User Profile | <img src="https://user-images.githubusercontent.com/32255348/197204984-8714e51f-5415-47cd-94fe-4a138a934c99.gif" width="400"/> |
+| Change User Photo | <img src="" width="400"/> |
