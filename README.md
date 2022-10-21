@@ -1,6 +1,6 @@
 # Dicoding---Fundamental Aplikasi iOS
 
-<p align="center">[NOT AVAILABLE RIGHT NOW]</p>
+<p align="center"><img src="https://user-images.githubusercontent.com/32255348/197202648-7a03d0cd-c0e2-4bc4-935c-84429df18ad8.gif" width="600"/></p>
 
 <p align="center"><i><b>Figure 1</b> Preview of Gametopia App</i></p>
 
